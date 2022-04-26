@@ -32,6 +32,7 @@
     <title>User management</title>
   </head>
   <body>
+   
     <div class="min-h-full">
       <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
       <div
@@ -40,6 +41,7 @@
         role="dialog"
         aria-modal="true"
       >
+     
         <div
           class="fixed inset-0 bg-gray-600 bg-opacity-75"
           aria-hidden="true"
@@ -48,6 +50,7 @@
         <div
           class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-cyan-700"
         >
+       
           <div class="absolute top-0 right-0 -mr-12 pt-2">
             <button
               id="close_sidebar"
@@ -74,7 +77,9 @@
             </button>
           </div>
 
-          <div class="flex-shrink-0 flex items-center px-4"></div>
+          <div class="flex-shrink-0 flex items-center px-4">
+           
+          </div>
 
           <!--nav bar place-->
           <nav
@@ -286,6 +291,8 @@
                   >
                 </div>
               </details>
+
+
             </div>
             <div class="mt-6 pt-6">
               <div class="px-2 space-y-1">
@@ -357,6 +364,8 @@
               </div>
             </div>
           </nav>
+
+
         </div>
 
         <div class="flex-shrink-0 w-14" aria-hidden="true">
@@ -408,8 +417,7 @@
               <!-- Managment Drop down-->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-                open
-              >
+              open>
                 <summary class="relative flex items-center">
                   <svg
                     class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
@@ -449,12 +457,12 @@
                     >Airline management</a
                   >
                   <a
-                    class="py-2 flex bg-cyan-600 px-4 rounded-md"
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
                     href="./flightmanagement.html"
                     >Flight management</a
                   >
                   <a
-                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    class="py-2 flex bg-cyan-600 px-4 rounded-md"
                     href="./portmanagement.html"
                     >Port management</a
                   >
@@ -514,7 +522,7 @@
                     >Flight management</a
                   >
                   <a
-                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    class="py-2 flex bg-cyan-600 px-4 rounded-md"
                     href="./portmanagement.html"
                     >Port management</a
                   >
@@ -585,6 +593,8 @@
                   >
                 </div>
               </details>
+
+
             </div>
             <div class="mt-6 pt-6">
               <div class="px-2 space-y-1">
@@ -656,11 +666,13 @@
               </div>
             </div>
           </nav>
+
         </div>
       </div>
 
       <div class="lg:pl-64 flex flex-col flex-1">
-        <!-- Header of the page -->
+
+         <!-- Header of the page -->
         <div
           class="relative z-10 flex-shrink-0 flex h-16 bg-white lg:border-none"
         >
@@ -692,6 +704,7 @@
             class="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-full lg:mx-auto lg:px-8"
           >
             <div class="flex-1 flex">
+              
               <div
                 class="relative w-full text-gray-400 focus-within:text-gray-600"
               >
@@ -715,26 +728,17 @@
                     aria-expanded="false"
                     aria-haspopup="true"
                   >
+                    
+
                     <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-8 w-8"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                     </div>
+                    
                     <span
                       class="hidden ml-3 text-gray-700 text-sm font-bold lg:block"
-                      ><span class="sr-only">Open user menu for </span>User
-                      Name</span
+                      ><span class="sr-only">Open user menu for </span>User Name</span
                     >
                     <!-- Heroicon name: solid/chevron-down -->
                     <svg
@@ -793,8 +797,10 @@
             <div
               class="max-w-full mx-auto px-4 flex sm:px-6 lg:px-8 items-center justify-between"
             >
-              <h2 class="text-sm md:text-lg leading-6 font-bold text-gray-900">
-                FLIGHT MANAGEMENT
+              <h2
+                class="text-sm md:text-lg leading-6 font-bold text-gray-900"
+              >
+                PORT MANAGEMENT
               </h2>
 
               <div class="md:px-2 space-x-2 flex right-0">
@@ -819,6 +825,8 @@
 
                   <h class="font-bold text-sm text-[#527D27]">New Flights</h>
                 </button>
+
+                
               </div>
             </div>
 
@@ -850,11 +858,7 @@
           </div>
 
           <div class="max-w-full mx-auto">
-            <h2
-              class="max-w-full mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8"
-            >
-              Recent activity
-            </h2>
+            
 
             <div class="px-8 mx-auto py-2 overflow-auto">
               <table id="table_id" class="min-w-full divide-y divide-gray-300">
@@ -864,39 +868,28 @@
                       scope="col"
                       class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                     >
-                      Airline
+                     Country Name
                     </th>
                     <th
                       scope="col"
                       class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                     >
-                      Flight
+                      Ports
                     </th>
                     <th
                       scope="col"
                       class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                     >
-                      Source Port
+                     Is obsolete
                     </th>
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                    >
-                      Destination Port
-                    </th>
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                    >
-                      Is Obselete
-                    </th>
+                    
                     <th
                       scope="col"
                       class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
                     >
                       Actions
                     </th>
-
+                    
                     <th></th>
                   </tr>
                 </thead>
@@ -910,12 +903,12 @@
 
     <div id="new_airline">
       <fieldset class="name">
-        <editor-field name="Airline"></editor-field>
-        <editor-field name="Flight"></editor-field>
-        <editor-field name="Source_Port"></editor-field>
-        <editor-field name="Destination_Port"></editor-field>
-        <editor-field name="Is_Obselete"></editor-field>
+        <editor-field name="Country Name"></editor-field>
+        <editor-field name="Ports"></editor-field>
+         <editor-field name="Is oboslete"></editor-field>
       </fieldset>
+      
+      </div>
     </div>
 
     <script
@@ -956,27 +949,24 @@
         data: [
           {
             DT_RowId: "row_1",
-            Airline: "test data",
-            Is_Obselete: "test data",
-            Flight: "test data",
-            Destination: "test data",
-            Source_Port: "test data",
+            Airline: "Garrett Winters",
+            Is_Obselete: "Director",
+           
+           
           },
           {
-            DT_RowId: "row_1",
-            Airline: "test data",
-            Is_Obselete: "test data",
-            Flight: "test data",
-            Destination: "test data",
-            Source_Port: "test data",
+            DT_RowId: "row_2",
+            Airline: "Garrett Winters",
+            Is_Obselete: "Director",
+            
           },
         ],
       };
 
-      // var data = [
-      //   ["Garrett Winters", "Director","Director","Director","Director"],
-      //   ["Garrett Winters", "Director","Director","Director","Director"],
-      // ];
+      var data = [
+        ["Garrett Winters", "Director","Director",],
+        ["Garrett Winters", "Director","Director",],
+      ];
 
       $(document).ready(function () {
         const t_ = $("#table_id").DataTable({
@@ -985,10 +975,8 @@
           columns: [
             { data: "Airline" },
             { data: "Is_Obselete" },
-            { data: "Flight" },
-            { data: "Destination" },
-            { data: "Source_Port" },
-
+            { data: "Is_Obselete" },
+           
             {
               data: null,
               className: "editor-button-edit",
@@ -1051,19 +1039,7 @@
                 label: "Is Obselete",
                 name: "Is_Obselete",
               },
-              {
-                label: "Flight",
-                name: "Flight",
-              },
-              {
-                label: "Destination Port",
-                name: "Destination_Port",
-              },
 
-              {
-                label: "Source Port",
-                name: "Source_Port",
-              },
             ],
           });
 
@@ -1076,6 +1052,10 @@
             });
           });
         });
+
+        
+
+         
 
         const tableBodyRef = t_.table().body();
         console.log(tableBodyRef);

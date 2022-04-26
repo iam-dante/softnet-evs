@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="Editor-2.0.7/css/editor.dataTables.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.11.5/b-2.2.2/sl-1.3.4/datatables.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"
+    />
+
+    <title>User management</title>
+  </head>
+  <body>
+    <!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  const colors = require('tailwindcss/colors')
+  
+  module.exports = {
+    // ...
+    theme: {
+      extend: {
+        colors: {
+          cyan: colors.cyan,
+        },
+      },
+    },
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+    <!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+-->
+    <div class="min-h-full">
+      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+      <div
+        class="hidden fixed inset-0 md:flex z-40 lg:hidden"
+        role="dialog"
+        aria-modal="true"
+      >
+        <!--
+      Off-canvas menu overlay, show/hide based on off-canvas menu state.
+
+      Entering: "transition-opacity ease-linear duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "transition-opacity ease-linear duration-300"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+        <div
+          class="fixed inset-0 bg-gray-600 bg-opacity-75"
+          aria-hidden="true"
+        ></div>
+
+        <!--
+      Off-canvas menu, show/hide based on off-canvas menu state.
+
+      Entering: "transition ease-in-out duration-300 transform"
+        From: "-translate-x-full"
+        To: "translate-x-0"
+      Leaving: "transition ease-in-out duration-300 transform"
+        From: "translate-x-0"
+        To: "-translate-x-full"
+    -->
+        <div
+          class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-red-700"
+        >
+          <!--
+        Close button, show/hide based on off-canvas menu state.
+
+        Entering: "ease-in-out duration-300"
+          From: "opacity-0"
+          To: "opacity-100"
+        Leaving: "ease-in-out duration-300"
+          From: "opacity-100"
+          To: "opacity-0"
+      -->
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button
+              type="button"
+              class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            >
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x -->
+              <svg
+                class="h-6 w-6 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex-shrink-0 flex items-center px-4">
+            <img
+              class="h-8 w-auto"
+              src="https://tailwindui.com/img/logos/easywire-logo-cyan-300-mark-white-text.svg"
+              alt="Easywire logo"
+            />
+          </div>
+          <nav
+            class="mt-5 flex-shrink-0 h-full divide-y divide-cyan-800 overflow-y-auto"
+            aria-label="Sidebar"
+          >
+            <div class="px-2 space-y-1">
+              <!-- Current: "bg-cyan-800 text-white", Default: "text-cyan-100 hover:text-white hover:bg-cyan-600" -->
+              <a
+                href="../dashboard.html"
+                class="bg-cyan-800 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                aria-current="page"
+              >
+                <!-- Heroicon name: outline/home -->
+                <svg
+                  class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+                Dashboard
+              </a>
+
+              <a
+                href="#"
+                class="text-cyan-100 hover:text-white hover:bg-cyan-600 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+              >
+                <!-- Heroicon name: outline/clock -->
+                <svg
+                  class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                Arriva
+              </a>
+
+              <a
+                href="#"
+                class="text-cyan-100 hover:text-white hover:bg-cyan-600 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+              >
+                <!-- Heroicon name: outline/scale -->
+                <svg
+                  class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                  />
+                </svg>
+                Balances
+              </a>
+
+              <a
+                href="#"
+                class="text-cyan-100 hover:text-white hover:bg-cyan-600 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+              >
+                <!-- Heroicon name: outline/credit-card -->
+                <svg
+                  class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                  />
+                </svg>
+                Cards
+              </a>
+
+              <a
+                href="#"
+                class="text-cyan-100 hover:text-white hover:bg-cyan-600 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+              >
+                <!-- Heroicon name: outline/user-group -->
+                <svg
+                  class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                Recipients
+              </a>
+
+              <a
+                href="#"
+                class="text-cyan-100 hover:text-white hover:bg-cyan-600 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+              >
+                <!-- Heroicon name: outline/document-report -->
+                <svg
+                  class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Reports
+              </a>
+            </div>
+            <div class="mt-6 pt-6">
+              <div class="px-2 space-y-1">
+                <a
+                  href="#"
+                  class="group flex items-center px-2 py-2 text-base font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                >
+                  <!-- Heroicon name: outline/cog -->
+                  <svg
+                    class="mr-4 h-6 w-6 text-cyan-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  Settings
+                </a>
+
+                <a
+                  href="#"
+                  class="group flex items-center px-2 py-2 text-base font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                >
+                  <!-- Heroicon name: outline/question-mark-circle -->
+                  <svg
+                    class="mr-4 h-6 w-6 text-cyan-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  Help
+                </a>
+
+                <a
+                  href="#"
+                  class="group flex items-center px-2 py-2 text-base font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                >
+                  <!-- Heroicon name: outline/shield-check -->
+                  <svg
+                    class="mr-4 h-6 w-6 text-cyan-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                  Privacy
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="flex-shrink-0 w-14" aria-hidden="true">
+          <!-- Dummy element to force sidebar to shrink to fit close icon -->
+        </div>
+      </div>
+
+      <!-- Static sidebar for desktop -->
+      <div class="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+        <div
+          class="flex flex-col flex-grow bg-cyan-700 pt-5 pb-4 overflow-y-auto"
+        >
+          <div class="flex items-center flex-shrink-0 px-4">
+            <!-- <img class="h-8 w-8" src="../images/immigration-logo.jpeg" alt="immigration-logo"> -->
+            <h class="font-bold text-white">EMERGENCY VISA SYSTEM</h>
+          </div>
+          <nav
+            class="mt-5 flex-1 flex flex-col divide-y divide-cyan-800 overflow-y-auto"
+            aria-label="Sidebar"
+          >
+            <div class="px-2 space-y-1">
+              <!-- Current: "bg-cyan-800 text-white", Default: "text-cyan-100 hover:text-white hover:bg-cyan-600" -->
+              <a
+                href="../dashboard.html"
+                class="hover:bg-cyan-800 text-white group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md"
+                aria-current="page"
+              >
+                <!-- Heroicon name: outline/home -->
+                <svg
+                  class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                  />
+                </svg>
+                Dashboard
+              </a>
+
+              <!-- Managment Drop down-->
+              <details
+                class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
+                open
+              >
+                <summary class="relative flex items-center">
+                  <svg
+                    class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <h>Management</h>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute right-0 h-4 w-4 group-open:transform group-open:-rotate-180 group-open:transition group-open:duration-500 group-open:ease-in-out"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <div class="bg-cyan-800 px-4 py-4 rounded-md mt-2">
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Airline management</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Flight management</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Port management</a
+                  >
+                  <a class="py-2 flex bg-cyan-600 px-4 rounded-md" href="#"
+                    >User management</a
+                  >
+                </div>
+              </details>
+
+              <!-- On Arrival Drop down -->
+              <details
+                class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
+              >
+                <summary class="relative flex items-center">
+                  <svg
+                    class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <h>On Arrvial</h>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute right-0 h-4 w-4 group-open:transform group-open:-rotate-180 group-open:transition group-open:duration-500 group-open:ease-in-out"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <div class="bg-cyan-800 px-4 py-4 rounded-md mt-2">
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Airline management</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Flight management</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Port management</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >User management</a
+                  >
+                </div>
+              </details>
+
+              <!-- MIS drop down -->
+              <details
+                class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
+              >
+                <summary class="relative flex items-center">
+                  <svg
+                    class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <h>MIS</h>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute right-0 h-4 w-4 group-open:transform group-open:-rotate-180 group-open:transition group-open:duration-500 group-open:ease-in-out"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <div class="bg-cyan-800 px-4 py-4 rounded-md mt-2">
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >SRS</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Entry/Exit</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >E.Gate</a
+                  >
+                  <a
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
+                    href="#"
+                    >Visa Paymnets</a
+                  >
+                </div>
+              </details>
+            </div>
+            <div class="mt-6 pt-6">
+              <div class="px-2 space-y-1">
+                <a
+                  href="#"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                >
+                  <!-- Heroicon name: outline/cog -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="mr-4 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z"
+                    />
+                  </svg>
+                  Reserve Control
+                </a>
+
+                <a
+                  href="#"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                >
+                  <!-- Heroicon name: outline/question-mark-circle -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="mr-4 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                    />
+                  </svg>
+                  Register Screening list
+                </a>
+
+                <a
+                  href="#"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                >
+                  <!-- Heroicon name: outline/shield-check -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="mr-4 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                    />
+                  </svg>
+                  Screening list Approval
+                </a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="lg:pl-64 flex flex-col flex-1">
+        <div
+          class="relative z-10 flex-shrink-0 flex h-16 bg-white lg:border-none"
+        >
+          <button
+            type="button"
+            class="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 lg:hidden"
+          >
+            <span class="sr-only">Open sidebar</span>
+            <!-- Heroicon name: outline/menu-alt-1 -->
+            <svg
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </button>
+          <!-- Search bar -->
+          <div
+            class="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-full lg:mx-auto lg:px-8"
+          >
+            <div class="flex-1 flex">
+              <label for="search-field" class="sr-only">Search</label>
+              <div
+                class="relative w-full text-gray-400 focus-within:text-gray-600"
+              >
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pointer-events-none"
+                  aria-hidden="true"
+                >
+                  <!-- Heroicon name: solid/search -->
+                </div>
+              </div>
+            </div>
+            <div class="ml-4 flex items-center md:ml-6">
+              <!-- Profile dropdown -->
+              <div class="ml-3 mt-12 relative">
+                <div>
+                  <button
+                    type="button"
+                    class="max-w-xs bg-white rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <img
+                      class="h-8 w-8 rounded-full"
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      alt="user_image"
+                    />
+                    <span
+                      class="hidden ml-3 text-gray-700 text-sm font-medium lg:block"
+                      ><span class="sr-only">Open user menu for </span>Emilia
+                      Birch</span
+                    >
+                    <!-- Heroicon name: solid/chevron-down -->
+                    <svg
+                      class="hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!--
+              Dropdown menu, show/hide based on menu state.
+
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+                <div
+                  class="origin-top-right hover:bg-red-400 hover:text-white text-gray-700 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+
+                  <a
+                    href="../../index.html"
+                    class="block px-4 py-2 text-sm"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                    >Logout</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <main class="flex-1 pb-8">
+          <!-- Page header -->
+          <div class="bg-white shadow">
+            <div class="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
+              <div
+                class="py-6 md:flex md:items-center md:justify-between lg:border-gray-200"
+              >
+                <div class="flex-1 min-w-0">
+                  <!-- Profile -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <div
+              class="max-w-full mx-auto px-4 flex sm:px-6 lg:px-8 items-center justify-between"
+            >
+              <h2
+                class="text-sm md:text-lg leading-6 font-medium text-gray-900"
+              >
+                USER MANAGEMENT
+              </h2>
+
+              <div class="md:px-2 space-x-2 flex right-0">
+                <button
+                  id="new_user"
+                  class="px-4 py-2 bg-[#D6F5DB] flex items-center space-x-2 rounded-md"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289C10.8946 3.48043 11 3.73478 11 4V9H16C16.2652 9 16.5196 9.10536 16.7071 9.29289C16.8946 9.48043 17 9.73478 17 10C17 10.2652 16.8946 10.5196 16.7071 10.7071C16.5196 10.8946 16.2652 11 16 11H11V16C11 16.2652 10.8946 16.5196 10.7071 16.7071C10.5196 16.8946 10.2652 17 10 17C9.73478 17 9.48043 16.8946 9.29289 16.7071C9.10536 16.5196 9 16.2652 9 16V11H4C3.73478 11 3.48043 10.8946 3.29289 10.7071C3.10536 10.5196 3 10.2652 3 10C3 9.73478 3.10536 9.48043 3.29289 9.29289C3.48043 9.10536 3.73478 9 4 9H9V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3Z"
+                      fill="#527D27"
+                    />
+                  </svg>
+
+                  <h class="font-bold text-xs text-[#527D27]">New User</h>
+                </button>
+
+                <button
+                  id="new_user_domain"
+                  class="md:py-4 py-2 md:px-6 px-2 bg-[#D6E8F5] flex items-center space-x-2 rounded-md"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289C10.8946 3.48043 11 3.73478 11 4V9H16C16.2652 9 16.5196 9.10536 16.7071 9.29289C16.8946 9.48043 17 9.73478 17 10C17 10.2652 16.8946 10.5196 16.7071 10.7071C16.5196 10.8946 16.2652 11 16 11H11V16C11 16.2652 10.8946 16.5196 10.7071 16.7071C10.5196 16.8946 10.2652 17 10 17C9.73478 17 9.48043 16.8946 9.29289 16.7071C9.10536 16.5196 9 16.2652 9 16V11H4C3.73478 11 3.48043 10.8946 3.29289 10.7071C3.10536 10.5196 3 10.2652 3 10C3 9.73478 3.10536 9.48043 3.29289 9.29289C3.48043 9.10536 3.73478 9 4 9H9V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3Z"
+                      fill="#406B9C"
+                    />
+                  </svg>
+
+                  <h class="font-bold text-sm text-[#406B9C]"
+                    >New User and Domain</h
+                  >
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="w-full bg-slate-200 py-12 px-4 mt-8 grid md:grid-cols-3 sm:grid-row-3 gap-8"
+            >
+              <input
+                placeholder="Seacrch by  Full Name"
+                type="text"
+                id="fullname"
+                class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+              />
+
+              <input
+                placeholder="Seacrch by User Name"
+                type="text"
+                id="username"
+                class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+              />
+
+              <button
+                class="h-12 w-full flex justify-center items-center rounded-md px-4 bg-[#406B9C] text-white font-bold text-xl hover:border-2 hover:border-[#406B9C] hover:bg-white hover:text-[#406B9C]"
+              >
+                Search
+              </button>
+
+              <!-- More items... -->
+            </div>
+          </div>
+
+          <div class="max-w-full mx-auto">
+            <h2
+              class="max-w-full mx-auto mt-8 px-4 text-lg leading-6 font-medium text-gray-900 sm:px-6 lg:px-8"
+            >
+              Recent activity
+            </h2>
+
+            <div class="px-8 mx-auto py-2 overflow-auto">
+              <table id="table_id" class="min-w-full divide-y divide-gray-300">
+                <thead class="bg-gray-50">
+                  <tr class="text-white items-center">
+                    <th
+                      scope="col"
+                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    >
+                      Full Name
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    >
+                      Username
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    >
+                      Mobile Number
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    >
+                      Designation
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    >
+                      Border Name
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                    >
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Charts starts here-->
+        </main>
+      </div>
+    </div>
+
+    <div id="new_user_form">
+      <fieldset class="name">
+        <editor-field name="full_name"></editor-field>
+        <editor-field name="user_name"></editor-field>
+        <editor-field name="mobile_number"></editor-field>
+        <editor-field name="designation"></editor-field>
+      </fieldset>
+
+      <div class="w-full bg-yellow-300 px-24 space-y-4">
+        <h>Roles</h>
+        <div class="grid grid-cols-2 gap-3">
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Primary Officer" />
+            <label class="ml-4">Primary Officer</label>
+          </span>
+          <span class="flex items-center">
+            <input
+              type="checkbox"
+              name="vehicle1"
+              value="Accounting Supervisor "
+            />
+            <label class="ml-4">Accounting Supervisor </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting</label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="new_user_formDomain">
+      <fieldset class="name">
+        <editor-field name="full_name"></editor-field>
+        <editor-field name="user_name"></editor-field>
+        <editor-field name="mobile_number"></editor-field>
+        <editor-field name="designation"></editor-field>
+      </fieldset>
+
+      <div class="w-full bg-yellow-300 px-24 space-y-4">
+        <h>Roles</h>
+        <div class="grid grid-cols-2 gap-3">
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Primary Officer" />
+            <label class="ml-4">Primary Officer</label>
+          </span>
+          <span class="flex items-center">
+            <input
+              type="checkbox"
+              name="vehicle1"
+              value="Accounting Supervisor "
+            />
+            <label class="ml-4">Accounting Supervisor </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting</label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+          <span class="flex items-center">
+            <input type="checkbox" name="vehicle1" value="Bike" />
+            <label class="ml-4">Accounting </label>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.11.5/b-2.2.2/sl-1.3.4/datatables.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="Editor-2.0.7/js/dataTables.editor.js"
+    ></script>
+    <script>
+      var json = {
+        data: [
+          {
+            DT_RowId: "row_1",
+            name: "Garrett Winters",
+            username: "Director",
+            mobilenumber: "Edinburgh",
+            designation: "8422",
+            Bordername: "2011/07/25",
+          },
+          {
+            DT_RowId: "row_2",
+            name: "Garrett Winters",
+            username: "Director",
+            mobilenumber: "Edinburgh",
+            designation: "8422",
+            Bordername: "2011/07/25",
+          },
+        ],
+      };
+
+      var data = [
+        ["Garrett Winters", "Director", "Edinburgh", "8422", "2011/07/25"],
+        ["Garrett Winters", "Director", "Edinburgh", "8422", "2011/07/25"],
+      ];
+
+      $(document).ready(function () {
+        const t_ = $("#table_id").DataTable({
+          data: json.data,
+          idSrc: "id",
+          columns: [
+            { data: "name" },
+            { data: "username" },
+            { data: "mobilenumber" },
+            { data: "designation" },
+            { data: "Bordername" },
+            {
+              data: null,
+              className: "editor-button",
+              defaultContent:
+                '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" /></svg>',
+              orderable: false,
+            },
+          ],
+
+          dom: "<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",
+          searching: false,
+          targets: 0,
+          initComplete: function () {
+            const that = this.api();
+            $("#input1").on("keyup change clear", function () {
+              console.log("Fire");
+              that.column(3).search(this.value).draw();
+            });
+          },
+        });
+
+        $("#table_id").on("click", "td.editor-button", function (e) {
+          e.preventDefault();
+          console.log("Hi");
+
+          editor.edit($(this).closest("tr"), {
+            title: "Edit record",
+            buttons: "Update",
+          });
+        });
+
+        // New User Form
+        $(document).ready(function () {
+          editor = new $.fn.dataTable.Editor({
+            table: "#table_id",
+            template: "#new_user_form",
+            fields: [
+              {
+                label: "First name:",
+                name: "full_name",
+              },
+              {
+                label: "Username:",
+                name: "user_name",
+              },
+
+              {
+                label: "Mobile Number:",
+                name: "mobile_number",
+              },
+              {
+                label: "Designation:",
+                name: "designation",
+              },
+              {
+                label: "Border Name:",
+                name: "border_name",
+              },
+            ],
+          });
+
+          $("#new_user").on("click", function (e) {
+            e.preventDefault();
+            console.log("hellow");
+            editor.create({
+              title: "Create new record",
+              buttons: ["Add", "Cancel"],
+            });
+          });
+        });
+
+        // New User  and Domain Form
+        $(document).ready(function () {
+          editor = new $.fn.dataTable.Editor({
+            // ajax: "../php/staff.php",
+
+            table: "#table_id",
+            template: "#new_user_formDomain",
+            fields: [
+              {
+                label: "First name:",
+                name: "full_name",
+              },
+              {
+                label: "Username:",
+                name: "user_name",
+              },
+
+              {
+                label: "Mobile Number:",
+                name: "mobile_number",
+              },
+              {
+                label: "Designation:",
+                name: "designation",
+              },
+              {
+                label: "Border Name:",
+                name: "border_name",
+              },
+            ],
+          });
+
+          $("#new_user_domain").on("click", function (e) {
+            e.preventDefault();
+            console.log("hellow");
+            editor.create({
+              title: "Create new record",
+              buttons: ["Add", "Cancel"],
+            });
+          });
+        });
+
+        const tableBodyRef = t_.table().body();
+        console.log(tableBodyRef);
+        $(tableBodyRef).addClass("divide-y");
+      });
+    </script>
+  </body>
+</html>

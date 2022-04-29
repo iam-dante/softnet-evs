@@ -30,7 +30,7 @@
     />
 
     <title>eGate</title>
-    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico" />
   </head>
   <body>
     <div class="min-h-full">
@@ -171,7 +171,6 @@
               <!-- On Arrival Drop down -->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-                
               >
                 <summary class="relative flex items-center">
                   <svg
@@ -232,7 +231,8 @@
               <!-- MIS drop down -->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-              open>
+                open
+              >
                 <summary class="relative flex items-center">
                   <svg
                     class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
@@ -492,7 +492,6 @@
               <!-- On Arrival Drop down -->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-               
               >
                 <summary class="relative flex items-center">
                   <svg
@@ -553,7 +552,8 @@
               <!-- MIS drop down -->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-              open>
+                open
+              >
                 <summary class="relative flex items-center">
                   <svg
                     class="mr-4 flex-shrink-0 h-6 w-6 text-cyan-200"
@@ -839,18 +839,12 @@
             <div
               class="max-w-full mx-auto px-4 flex sm:px-6 lg:px-8 items-center justify-between"
             >
-              <h2 class="text-xl leading-6 font-bold text-gray-900">
-                eGATE
-              </h2>
-               <div class="md:px-2 space-x-2 flex right-0">
-
-              </div>
+              <h2 class="text-xl leading-6 font-bold text-gray-900">eGATE</h2>
+              <div class="md:px-2 space-x-2 flex right-0"></div>
             </div>
-            
 
             <div class="w-full bg-slate-200 py-12 px-16 mt-8 space-y-4">
               <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
-                
                 <label class="space-y-2">
                   <h class="text-sm font-bold">START DATE</h>
                   <input
@@ -870,20 +864,21 @@
                     class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
                   />
                 </label>
-                
-               
-                  <button
-                    class="md:mt-8 h-12 w-full flex justify-center items-center rounded-md px-4 bg-[#406B9C] text-white font-bold text-xl hover:border-2 hover:border-[#406B9C] hover:bg-white hover:text-[#406B9C]"
-                  >
-                    Search
-                  </button>
-                
+
+                <button
+                  class="md:mt-8 h-12 w-full flex justify-center items-center rounded-md px-4 bg-[#406B9C] text-white font-bold text-xl hover:border-2 hover:border-[#406B9C] hover:bg-white hover:text-[#406B9C]"
+                >
+                  Search
+                </button>
               </div>
             </div>
           </div>
 
-          <div class="px-8 mx-auto py-2 overflow-auto">
-            <table id="table_id" class="min-w-full divide-y divide-gray-300 mx-auto">
+          <div class="px-8 mx-auto py-2 overflow-auto mt-12">
+            <table
+              id="table_id"
+              class="min-w-full divide-y divide-gray-300 mx-auto "
+            >
               <thead class="bg-gray-400">
                 <tr class="text-white items-center">
                   <th
@@ -957,8 +952,13 @@
       src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
     ></script>
 
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"
+    ></script>
+
     <!-- form here -->
-    <!-- <script
+    <script
       type="text/javascript"
       charset="utf8"
       src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"
@@ -992,19 +992,14 @@
       type="text/javascript"
       charset="utf8"
       src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"
-    ></script> -->
-    
+    ></script>
+
     <!--  -->
 
-    <script
-      type="text/javascript"
-      src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"
-    ></script>
-
-    <script
+    <!-- <script
       type="text/javascript"
       src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.11.5/b-2.2.2/sl-1.3.4/datatables.min.js"
-    ></script>
+    ></script> -->
 
     <script
       type="text/javascript"
@@ -1018,23 +1013,27 @@
     ></script>
 
     <script>
-     
-
       var data = [
-        ["test data", "test data","test data","test data","test data","test data","test data", "text data"]
+        [
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "text data",
+        ],
       ];
 
       $(document).ready(function () {
         const t_ = $("#table_id").DataTable({
           data: data,
-          dom: 'Bfrtip',
-           buttons: [
-            'pdf', 'print'
-        ],
-          idSrc: "id",
-         
 
-          dom: "<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",
+          buttons: [  'excel', 'pdf',],
+          idSrc: "id",
+
+          dom: "<'flex flex-col' <B><'py-4 px-6 flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>>",
           searching: false,
           targets: 0,
           initComplete: function () {
@@ -1045,8 +1044,6 @@
             });
           },
         });
-
-
 
         const tableBodyRef = t_.table().body();
         console.log(tableBodyRef);

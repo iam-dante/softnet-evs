@@ -731,6 +731,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 0px;
 }
 
+.w-4\/5 {
+  width: 80%;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-\[ful\] {
+  width: ful;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -995,9 +1015,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(214 245 219 / var(--tw-bg-opacity));
 }
 
-.bg-gray-300 {
+.bg-gray-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
 .bg-red-400 {
@@ -1020,34 +1040,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(34 211 238 / var(--tw-bg-opacity));
 }
 
-.bg-black {
+.bg-gray-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.bg-slate-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-75 {
@@ -1123,6 +1118,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.5rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .px-24 {
   padding-left: 6rem;
   padding-right: 6rem;
@@ -1131,11 +1131,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
-}
-
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .pt-5 {
@@ -1435,6 +1430,18 @@ table#table_id tbody tr.even {
     width: 24rem;
   }
 
+  .sm\:w-\[\] {
+    width: ;
+  }
+
+  .sm\:w-\[80\] {
+    width: 80;
+  }
+
+  .sm\:w-\[80\%\] {
+    width: 80%;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1464,6 +1471,10 @@ table#table_id tbody tr.even {
 
   .md\:h-full {
     height: 100%;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:grid-cols-3 {

@@ -30,6 +30,7 @@
     />
 
     <title>SRS</title>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
   </head>
   <body>
     <div class="min-h-full">
@@ -170,7 +171,7 @@
               <!-- On Arrival Drop down -->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-                open
+                
               >
                 <summary class="relative flex items-center">
                   <svg
@@ -211,7 +212,7 @@
                     >Visas</a
                   >
                   <a
-                    class="py-2 flex bg-cyan-600 px-4 rounded-md"
+                    class="py-2 flex hover:bg-cyan-600 px-4 rounded-md"
                     href="../onArrival/passes.html"
                     >Passes</a
                   >
@@ -264,7 +265,7 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-cyan-800 px-4 py-4 rounded-md mt-2">
+                <div class="bg-cyan-800 px-4 py-4 rounded-md mt-2 space-y-2">
                   <a
                     class="py-2 flex bg-cyan-600 px-4 rounded-md"
                     href="../managementInformationSystem/srs.html"
@@ -585,7 +586,7 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-cyan-800 px-4 py-4 rounded-md mt-2">
+                <div class="bg-cyan-800 px-4 py-4 rounded-md mt-2 space-y-2">
                   <a
                     class="py-2 flex bg-cyan-600 px-4 rounded-md"
                     href="../managementInformationSystem/srs.html"
@@ -657,7 +658,7 @@
 
                 <a
                   href="../others/registerScreeningList.html"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white bg-cyan-600"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
                 >
                   <!-- Heroicon name: outline/question-mark-circle -->
                   <svg
@@ -839,7 +840,7 @@
               class="max-w-full mx-auto px-4 flex sm:px-6 lg:px-8 items-center justify-between"
             >
               <h2 class="text-xl leading-6 font-bold text-gray-900">
-                REGISTER SCREENING LIST
+                SRS
               </h2>
                <div class="md:px-2 space-x-2 flex right-0">
 
@@ -849,32 +850,41 @@
 
             <div class="w-full bg-slate-200 py-12 px-16 mt-8 space-y-4">
               <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
-                <input
-                  placeholder="Search by  Subject ID."
-                  type="text"
-                  id="fullname"
-                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
-                />
-
-                <input
-                  placeholder="Search by Given Names"
-                  type="text"
-                  id="fullname"
-                  class="w- py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
-                />
                 
-                <button
-                  class="h-12 w-full flex justify-center items-center rounded-md px-4 bg-[#406B9C] text-white font-bold text-xl hover:border-2 hover:border-[#406B9C] hover:bg-white hover:text-[#406B9C]"
-                >
-                  Search
-                </button>
+                <label class="space-y-2">
+                  <h class="text-sm font-bold">START DATE</h>
+                  <input
+                    placeholder="Search by  Subject ID."
+                    type="date"
+                    id="end_date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </label>
+
+                <label class="space-y-2">
+                  <h class="text-sm font-bold">END DATE</h>
+                  <input
+                    placeholder="Search by  Subject ID."
+                    type="date"
+                    id="start_date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </label>
+                
+               
+                  <button
+                    class="md:mt-8 h-12 w-full flex justify-center items-center rounded-md px-4 bg-[#406B9C] text-white font-bold text-xl hover:border-2 hover:border-[#406B9C] hover:bg-white hover:text-[#406B9C]"
+                  >
+                    Search
+                  </button>
+                
               </div>
             </div>
           </div>
 
           <div class="px-8 mx-auto py-2 overflow-auto">
             <table id="table_id" class="min-w-full divide-y divide-gray-300">
-              <thead class="bg-gray-300">
+              <thead class="bg-gray-400">
                 <tr class="text-white items-center">
                   <th
                     scope="col"

@@ -29,8 +29,8 @@
       href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"
     />
 
-    <title>Resrve Control</title>
-    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <title>Register List Approval</title>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico" />
   </head>
   <body>
     <div class="min-h-full">
@@ -171,7 +171,7 @@
               <!-- On Arrival Drop down -->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-               
+            
               >
                 <summary class="relative flex items-center">
                   <svg
@@ -315,7 +315,7 @@
               <div class="px-2 space-y-1">
                 <a
                   href="../others/reseveControl.html"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white bg-cyan-600"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
                 >
                   <!-- Heroicon name: outline/cog -->
                   <svg
@@ -337,7 +337,7 @@
 
                 <a
                   href="../others/registerScreeningList.html"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white bg-cyan-600"
                 >
                   <!-- Heroicon name: outline/question-mark-circle -->
                   <svg
@@ -359,7 +359,7 @@
 
                 <a
                   href="../others/screeningListApproval.html"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 text-white hover:bg-cyan-600"
                 >
                   <!-- Heroicon name: outline/shield-check -->
                   <svg
@@ -635,7 +635,7 @@
               <div class="px-2 space-y-1">
                 <a
                   href="../others/reseveControl.html"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white bg-cyan-600"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
                 >
                   <!-- Heroicon name: outline/cog -->
                   <svg
@@ -657,7 +657,7 @@
 
                 <a
                   href="../others/registerScreeningList.html"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white bg-cyan-600"
                 >
                   <!-- Heroicon name: outline/question-mark-circle -->
                   <svg
@@ -679,7 +679,7 @@
 
                 <a
                   href="../others/screeningListApproval.html"
-                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
+                  class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-cyan-100 hover:bg-cyan-600"
                 >
                   <!-- Heroicon name: outline/shield-check -->
                   <svg
@@ -838,269 +838,278 @@
             <div
               class="max-w-full mx-auto px-4 flex sm:px-6 lg:px-8 items-center justify-between"
             >
-              <h2 class="text-2xl leading-6 font-bold text-gray-900">
-                RESERVE CONTROL
+              <h2 class="text-xl leading-6 font-bold text-gray-900">
+                REGISTER SCREENING LIST
               </h2>
+              <div class="md:px-2 space-x-2 flex right-0"></div>
             </div>
-          </div>
 
-          <div class="px-8 mx-auto py-2 overflow-auto mt-8">
-            <div class="max-w-full mx-auto flex items-center justify-between">
-                <span></span>
-              <div class="space-x-2 flex right-0">
-                <button
-                  id="new_user"
-                  class="px-4 py-2 bg-[#D6F5DB] flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 text-[#527D27]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
+            <div class="w-full bg-slate-200 py-12 px-16 mt-8 space-y-4">
+              <div class="grid md:grid-cols-3 grid-cols-1 gap-8 pb-12">
+                <div class="space-y-2">
+                  <h>Reporting Officer</h>
+                  <input
+                    placeholder="Officer name"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
 
-                  <h class="font-bold text-sm text-[#527D27]"
-                    >Create Visa Reserve Application</h
-                  >
-                </button>
+                <div class="space-y-2">
+                  <h>Justification</h>
+                  <input
+                    placeholder=""
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <h>Contant Person</h>
+                  <input
+                    placeholder="Contant"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
 
-                <button
-                  id="new_user_domain"
-                  class="md:py-4 py-2 md:px-6 px-2 bg-[#D6E8F5] flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 text-[#406B9C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3"
+                <div class="space-y-2 flex flex-col">
+                  <h>Changing Country</h>
+                  <select
+                    name="all_pendings"
+                    class="px-4 py-4 bg-white rounded-md"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
+                    <option value="all pendings">
+                      Seacrch by source institution
+                    </option>
+                  </select>
+                </div>
 
-                  <h class="font-bold text-sm text-[#406B9C]"
-                    >Upload to Center</h
-                  >
-                </button>
+                <div class="space-y-2">
+                  <h>Reference No.</h>
+                  <input
+                    placeholder="Reference Number"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
 
-                <button
-                  id="new_user_domain"
-                  class="md:py-4 py-2 md:px-6 px-2 bg-orange-200 flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 text-orange-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
+                <div class="space-y-2">
+                  <h>Warrant Date</h>
+                  <input
+                    type="date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
 
-                  <h class="font-bold text-sm text-orange-600"
-                    >Request Control Number</h
+                <div class="space-y-2">
+                  <h>Source Institution</h>
+                  <input
+                    placeholder="Institution"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <h>Reason</h>
+                  <input
+                    placeholder="Reason"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <h>Remark</h>
+                  <input
+                    placeholder="Remark"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+
+                <div class="h-full w-full flex space-x-4 items-center">
+                  <input
+                    type="checkbox"
+                    class="py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                  <label>Valid For Life Time</label>
+                </div>
+
+                <div class="space-y-2">
+                  <h>Valid Date Start</h>
+                  <input
+                    placeholder="Remark"
+                    type="date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <h>Valid Date End</h>
+                  <input
+                    placeholder="Remark"
+                    type="date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+
+                <div class="space-y-2 flex flex-col">
+                  <h>Screening List Type</h>
+                  <select
+                    name="all_pendings"
+                    class="px-4 py-4 bg-white rounded-md"
                   >
-                </button>
+                    <option value="all pendings">
+                      Select Screenig List Type
+                    </option>
+                  </select>
+                </div>
+
+                <div class="space-y-2 flex flex-col">
+                  <h>Screening Action</h>
+                  <select
+                    name="all_pendings"
+                    class="px-4 py-4 bg-white rounded-md"
+                  >
+                    <option value="all pendings">Select Screenig Action</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <table id="table_id" class="min-w-full divide-y divide-gray-300">
-              <thead class="bg-gray-300">
-                <tr class="text-white items-center">
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Visit Purpose
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Total Application
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Pending Upload
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    No control No. Received
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Available for use
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Used
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Control Number
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-200 bg-white"></tbody>
-            </table>
-          </div>
 
-<!-- second table  -->
-          <div class="px-8 mx-auto py-2 overflow-auto mt-8">
-            <div class="max-w-full mx-auto flex items-center justify-between">
-             <span></span>
-              <div class="space-x-2 flex right-0">
-                <button
-                  id="new_user"
-                  class="px-4 py-2 bg-[#D6F5DB] flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 text-[#527D27]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
+              <div class="w-full bg-[#406B9C] h-1 my-80"></div>
 
-                  <h class="font-bold text-sm text-[#527D27]"
-                    >Create Visa Reserve Application</h
-                  >
-                </button>
+              <div class="grid md:grid-cols-3 grid-cols-1 gap-8 pt-12 pb-12">
+                <div class="space-y-2">
+                  <h>Given Names</h>
+                  <input
+                    placeholder="Names"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
 
-                <button
-                  id="new_user_domain"
-                  class="md:py-4 py-2 md:px-6 px-2 bg-[#D6E8F5] flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 text-[#406B9C]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
+                <div class="space-y-2">
+                  <h>Surname</h>
+                  <input
+                    placeholder="Surname"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <h>Birth Date</h>
+                  <input
+                    placeholder="Contant"
+                    type="date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
 
-                  <h class="font-bold text-sm text-[#406B9C]"
-                    >Upload to Center</h
+                <div class="space-y-2 flex flex-col">
+                  <h>Gender</h>
+                  <select
+                    name="all_pendings"
+                    class="px-4 py-4 bg-white rounded-md"
                   >
-                </button>
+                    <option value="none">Select the gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
 
-                <button
-                  id="new_user_domain"
-                  class="md:py-4 py-2 md:px-6 px-2 bg-orange-200 flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 text-orange-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="3"
+                <div class="space-y-2 flex flex-col">
+                  <h>Nationality</h>
+                  <select
+                    name="all_pendings"
+                    class="px-4 py-4 bg-white rounded-md"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
+                    <option value="none">Select Nationality</option>
+                    <option value="tanzania">Tanzania</option>
+                    <option value="kenya">Kenya</option>
+                  </select>
+                </div>
 
-                  <h class="font-bold text-sm text-orange-600"
-                    >Request Control Number</h
-                  >
-                </button>
+                <div class="space-y-2">
+                  <h>Place of birth</h>
+                  <input
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
               </div>
-            </div>
-            <table id="table_id1" class="min-w-full divide-y divide-gray-300">
-              <thead class="bg-gray-300">
-                <tr class="text-white items-center">
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Amount
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Total Application
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Pending Upload
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    No control No. Received
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Available for use
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Used
-                  </th>
-                  <th
-                    scope="col"
-                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
-                  >
-                    Control Number
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-200 bg-white"></tbody>
-            </table>
-          </div>
 
+              <div class="w-full bg-[#406B9C] h-1 my-80"></div>
+
+              <div class="grid md:grid-cols-3 grid-cols-1 gap-8 pt-12">
+                <div class="space-y-2 flex flex-col">
+                  <h>Travel Doc Type</h>
+                  <select
+                    name="all_pendings"
+                    class="px-4 py-4 bg-white rounded-md"
+                  >
+                    <option value="none">Select travel doc type</option>
+                  </select>
+                </div>
+
+                <div class="space-y-2">
+                  <h>Travel Doc Number</h>
+                  <input
+                    placeholder="Doc Number"
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+                <div class="space-y-2 flex flex-col">
+                  <h>Issued Country</h>
+                  <select
+                    name="all_pendings"
+                    class="px-4 py-4 bg-white rounded-md"
+                  >
+                    <option value="none">Select Nationality</option>
+                    <option value="tanzania">Tanzania</option>
+                    <option value="kenya">Kenya</option>
+                  </select>
+                </div>
+
+                <div class="space-y-2">
+                  <h>Issused Authority</h>
+                  <input
+                    type="text"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <h>Issused Date</h>
+                  <input
+                    type="date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <h>Expired Date</h>
+                  <input
+                    type="date"
+                    class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
+                  />
+                </div>
+              </div>
+
+              <!-- <button
+                class="h-12 w-full flex justify-center items-center rounded-md px-4 bg-[#406B9C] text-white font-bold text-xl hover:border-2 hover:border-[#406B9C] hover:bg-white hover:text-[#406B9C]"
+              >
+                Search
+              </button> -->
+            </div>
+
+            <div class="h-24 w-full flex items-center  justify-center space-x-4">
+                <button class="px-2 py-2 bg-cyan-100 text-cyan-800 hover:bg-cyan-700 hover:text-cyan-100 font-bold rounded-md h-12 w-24">Save</button>
+
+                <button class="px-2 py-2 bg-red-100 text-red-800 hover:bg-red-700 hover:text-red-100 font-bold rounded-md h-12 w-24">Cancel</button>
+            </div>
+          </div>
         </main>
       </div>
     </div>
@@ -1148,33 +1157,12 @@
           "test data",
           "test data",
           "test data",
+          "text data",
         ],
       ];
 
       $(document).ready(function () {
         const t_ = $("#table_id").DataTable({
-          data: data,
-          idSrc: "id",
-
-          dom: "<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",
-          searching: false,
-          targets: 0,
-          initComplete: function () {
-            const that = this.api();
-            $("#input1").on("keyup change clear", function () {
-              console.log("Fire");
-              that.column(3).search(this.value).draw();
-            });
-          },
-        });
-
-        const tableBodyRef = t_.table().body();
-        console.log(tableBodyRef);
-        $(tableBodyRef).addClass("divide-y");
-      });
-
-      $(document).ready(function () {
-        const t_ = $("#table_id1").DataTable({
           data: data,
           idSrc: "id",
 

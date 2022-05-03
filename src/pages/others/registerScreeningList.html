@@ -30,7 +30,7 @@
     />
 
     <title>Register List Approval</title>
-    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico" />
   </head>
   <body>
     <div class="min-h-full">
@@ -492,7 +492,6 @@
               <!-- On Arrival Drop down -->
               <details
                 class="group flex w-full text-cyan-100 hover:text-white hover:bg-cyan-600 group items-center px-2 py-2 text-sm leading-6 font-medium cursor-pointer rounded-md"
-               
               >
                 <summary class="relative flex items-center">
                   <svg
@@ -842,9 +841,9 @@
               <h2 class="text-xl leading-6 font-bold text-gray-900">
                 REGISTER SCREENING LIST
               </h2>
-               <div class="md:px-2 space-x-2 flex right-0">
-                <button
-                  id="new_user"
+              <div class="md:px-2 space-x-2 flex right-0">
+                <a
+                  href="./form_registerScreeningList.html"
                   class="px-4 py-4 bg-[#D6F5DB] flex items-center space-x-2 rounded-md"
                 >
                   <svg
@@ -862,16 +861,18 @@
                     />
                   </svg>
 
-                  <h class="font-bold text-sm text-[#527D27]">New Airline</h>
-                </button>
-
-                
+                  <h
+                    href="./form_registerScreeningList.html"
+                    class="font-bold text-sm text-[#527D27]"
+                    >New Screening Subject</h
+                  >
+                </a>
               </div>
             </div>
-            
 
             <div class="w-full bg-slate-200 py-12 px-16 mt-8 space-y-4">
               <div class="grid md:grid-cols-3 grid-cols-1 gap-8">
+                
                 <input
                   placeholder="Search by  Subject ID."
                   type="text"
@@ -885,8 +886,6 @@
                   id="fullname"
                   class="w- py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border-slate-300 rounded-md"
                 />
-
-                
 
                 <input
                   placeholder="Search by Surname"
@@ -913,9 +912,9 @@
                   name="all_pendings"
                   class="px-4 py-4 bg-white rounded-md"
                 >
-                  <option value="all pendings">Seacrch by source institution</option>
-                  
-                  
+                  <option value="all pendings">
+                    Seacrch by source institution
+                  </option>
                 </select>
               </div>
               <button
@@ -927,7 +926,10 @@
           </div>
 
           <div class="px-8 mx-auto py-2 overflow-auto">
-            <table id="table_id" class="min-w-full divide-y divide-gray-300">
+            <table
+              id="table_id"
+              class="min-w-full divide-y divide-gray-300 mx-auto"
+            >
               <thead class="bg-gray-300">
                 <tr class="text-white items-center">
                   <th
@@ -1022,17 +1024,23 @@
     ></script>
 
     <script>
-     
-
       var data = [
-        ["test data", "test data","test data","test data","test data","test data","test data", "text data"]
+        [
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "text data",
+        ],
       ];
 
       $(document).ready(function () {
         const t_ = $("#table_id").DataTable({
           data: data,
           idSrc: "id",
-         
 
           dom: "<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",
           searching: false,
@@ -1045,8 +1053,6 @@
             });
           },
         });
-
-
 
         const tableBodyRef = t_.table().body();
         console.log(tableBodyRef);

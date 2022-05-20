@@ -951,7 +951,7 @@
                 <span></span>
               <div class="space-x-2 flex right-0">
                 <button
-                  id="new_user"
+                  data-modal-toggle="createPassReserveModal"
                   class="px-4 py-2 bg-[#D6F5DB] flex items-center space-x-2 rounded-md"
                 >
                   <svg
@@ -1170,5 +1170,90 @@
         $(tableBodyRef).addClass("divide-y");
       });
     </script>
+
+<!-- Create Pass Reserve Application -->
+    <div
+      id="createPassReserveModal"
+      tabindex="-1"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]"
+    >
+      <div class="relative p-4 h-full w-full max-w-lg md:h-auto drop-shadow-xl">
+        <div class="relative bg-white rounded-lg shadow">
+          <form action="" method="post">
+            <button
+              type="button"
+              class="absolute top-3 right-2.5 bg-transparent hover:text-red-200 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+              data-modal-toggle="createPassReserveModal"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <div class="p-6 space-y-4 py-12">
+              <div class="flex flex-col space-y-3">
+                <label>Pass Type Id</label>
+                <select
+                  name="all_pendings"
+                  class="px-2 py-2 bg-slate-200 rounded-md"
+                >
+                  <option value="none">Select Pass Type</option>
+                  
+                </select>
+              </div>
+
+
+              <div class="flex flex-col space-y-3">
+                <label>Country Category Id</label>
+                
+
+                <select
+                  name="all_pendings"
+                  class="px-2 py-2 bg-slate-200 rounded-md"
+                >
+                  <option value="none">Select Country Category</option>
+                  
+                </select>
+              </div>
+
+              <div class="flex flex-col space-y-3">
+                <label>Quantity</label>
+                <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+
+                
+              </div>
+
+
+
+              <!-- Action buttons  -->
+              <div class="flex items-center justify-end  w-full">
+                <button
+                  data-modal-toggle="createPassReserveModal"
+                  class="text-green-900 hover:text-white hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+                >
+                  Create Application
+                </button>
+                <button
+                  data-modal-toggle="createPassReserveModal"
+                  class="bg-red-700 text-white rounded-md text-sm font-medium px-5 py-2.5"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+ <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
   </body>
 </html>

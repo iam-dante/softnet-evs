@@ -4,21 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.5/dist/flowbite.min.css" /> -->
-    <link href="../../dist/output.css" rel="stylesheet" />
+    <link href="../../../dist/output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"
     />
 
-    <link
+    <!-- <link
       rel="stylesheet"
       type="text/css"
       href="Editor-2.0.7/css/editor.dataTables.css"
-    />
+    /> -->
 
     <link
       rel="stylesheet"
@@ -26,19 +23,16 @@
       href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.11.5/b-2.2.2/sl-1.3.4/datatables.min.css"
     />
 
-    
     <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"
     />
-    
 
-    <title>User management</title>
-    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <title>Subject Details</title>
+    <link rel="icon" type="image/x-icon" href="../../../images/favicon.ico" />
   </head>
   <body>
-   
     <div class="min-h-full">
       <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
       <div
@@ -47,7 +41,6 @@
         role="dialog"
         aria-modal="true"
       >
-     
         <div
           class="fixed inset-0 bg-gray-600 bg-opacity-75"
           aria-hidden="true"
@@ -56,7 +49,6 @@
         <div
           class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-blue-900"
         >
-       
           <div class="absolute top-0 right-0 -mr-12 pt-2">
             <button
               id="close_sidebar"
@@ -83,9 +75,7 @@
             </button>
           </div>
 
-          <div class="flex-shrink-0 flex items-center px-4">
-           
-          </div>
+          <div class="flex-shrink-0 flex items-center px-4"></div>
 
           <!--nav bar place-->
           <nav
@@ -95,7 +85,7 @@
             <div class="px-2 space-y-1">
               <!-- Current: "bg-cyan-800 text-white", Default: "text-cyan-100 hover:text-white hover:bg-cyan-600" -->
               <a
-                href="../dashboard.html"
+                href="../../dashboard.html"
                 class="hover:bg-blue-600 text-white group flex items-center px-2 py-2 text-sm leading-6 font-bold rounded-md"
                 aria-current="page"
               >
@@ -121,7 +111,7 @@
               <!-- Managment Drop down-->
               <details
                 class="group flex w-full text-white font-bold hover:text-white hover:bg-blue-600 group items-center px-2 py-2 text-sm leading-6 cursor-pointer rounded-md"
-              open>
+              >
                 <summary class="relative flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -153,25 +143,27 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./airlinemanagement.html"
+                    href="../../management/airlinemanagement.html"
                     >Airline management</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./flightmanagement.html"
+                    href="../../management/flightmanagement.html"
                     >Flight management</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./portmanagement.html"
+                    href="../../management/portmanagement.html"
                     >Port management</a
                   >
                   <a
-                    class="py-2 flex bg-blue-900 px-4 rounded-md text-white"
-                    href="./usermanagement.html"
+                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
+                    href="../../management/usermanagement.html"
                     >User management</a
                   >
                 </div>
@@ -215,12 +207,12 @@
                 <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../onArrival/visas.html"
+                    href="../../onArrival/visas.html"
                     >Visas</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../onArrival/passes.html"
+                    href="../../onArrival/passes.html"
                     >Passes</a
                   >
                 </div>
@@ -262,47 +254,49 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/srs.html"
+                    href="../../msiReports/srs.html"
                     >SRS</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/entryExit.html"
+                    href="../../msiReports/entryExit.html"
                     >Entry/Exit</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/eGate.html"
+                    href="../../msiReports/eGate.html"
                     >E.Gate</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/travellersGroup.html"
+                    href="../../msiReports/travellersGroup.html"
                     >Travellers Groups</a
                   >
 
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./msiReports/visaPayment.html"
+                    href="../../msiReports/visaPayment.html"
                     >Visa Paymnets</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./msiReports/visaOnArrival.html"
+                    href="../../managementInformationSystem/visaOnArrival.html"
                     >Visa On Arrival</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./msiReports/visaOnline.html"
+                    href="../../msiReports/visaOnline.html"
                     >Visa Online</a
                   >
 
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="./msiReports/travellersFlight.html"
+                    href="../../msiReports/travellersFlight.html"
                     >Travellers Flight</a
                   >
                 </div>
@@ -344,26 +338,28 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../payments/restorecontrolno.html"
+                    href="../../payments/restorecontrolno.html"
                     >Restore Control No</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../payments/miscellaneousbillvisas.html"
+                    href="../../payments/miscellaneousbillvisas.html"
                     >Miscellaneous Bill Visas</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../payments/visa-reseveControl.html"
+                    href="../../payments/visa-reseveControl.html"
                     >Visas-Reserve Control</a
                   >
 
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../payments/passes-reseveControl.html"
+                    href="../../payments/passes-reseveControl.html"
                     >Passes- Reserve Control</a
                   >
                 </div>
@@ -371,6 +367,7 @@
 
               <details
                 class="group flex w-full text-white hover:bg-blue-600 group items-center px-2 py-2 text-sm leading-6 font-bold cursor-pointer rounded-md"
+                open
               >
                 <summary class="relative flex items-center">
                   <svg
@@ -403,20 +400,22 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../screeningList/registerScreeningList.html"
+                    href="../../screeningList/registerScreeningList.html"
                     >Register Screening List</a
                   >
                   <a
-                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../screeningList/screeningListApproval.html"
+                    class="py-2 flex bg-blue-900 px-4 rounded-md text-sm"
+                    href="../../screeningList/screeningListApproval.html"
                     >Screening List Approval</a
                   >
                 </div>
               </details>
-               <a
+              <a
                 href="#"
                 class="bg-yellow-600 text-white group flex items-center px-2 py-2 text-sm leading-6 font-bold rounded-md"
                 aria-current="page"
@@ -440,8 +439,6 @@
               </a>
             </div>
           </nav>
-
-
         </div>
 
         <div class="flex-shrink-0 w-14" aria-hidden="true">
@@ -460,14 +457,14 @@
             <h class="font-bold text-white">BORDER SYSTEM</h>
           </div>
 
-         <nav
+          <nav
             class="mt-5 flex-1 flex flex-col divide-y bg-blue-900 overflow-y-auto"
             aria-label="Sidebar"
           >
             <div class="px-2 space-y-1">
               <!-- Current: "bg-cyan-800 text-white", Default: "text-cyan-100 hover:text-white hover:bg-cyan-600" -->
               <a
-                href="../dashboard.html"
+                href="../../dashboard.html"
                 class="hover:bg-blue-600 text-white group flex items-center px-2 py-2 text-sm leading-6 font-bold rounded-md"
                 aria-current="page"
               >
@@ -493,7 +490,7 @@
               <!-- Managment Drop down-->
               <details
                 class="group flex w-full text-white font-bold hover:text-white hover:bg-blue-600 group items-center px-2 py-2 text-sm leading-6 cursor-pointer rounded-md"
-              open>
+              >
                 <summary class="relative flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -525,25 +522,27 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./airlinemanagement.html"
+                    href="../../management/airlinemanagement.html"
                     >Airline management</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./flightmanagement.html"
+                    href="../../management/flightmanagement.html"
                     >Flight management</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./portmanagement.html"
+                    href="../../management/portmanagement.html"
                     >Port management</a
                   >
                   <a
-                    class="py-2 flex bg-blue-900 px-4 rounded-md text-white"
-                    href="./usermanagement.html"
+                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
+                    href="../../management/usermanagement.html"
                     >User management</a
                   >
                 </div>
@@ -587,12 +586,12 @@
                 <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../onArrival/visas.html"
+                    href="../../onArrival/visas.html"
                     >Visas</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../onArrival/passes.html"
+                    href="../../onArrival/passes.html"
                     >Passes</a
                   >
                 </div>
@@ -634,47 +633,49 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/srs.html"
+                    href="../../msiReports/srs.html"
                     >SRS</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/entryExit.html"
+                    href="../../msiReports/entryExit.html"
                     >Entry/Exit</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/eGate.html"
+                    href="../../msiReports/eGate.html"
                     >E.Gate</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="../msiReports/travellersGroup.html"
+                    href="../../msiReports/travellersGroup.html"
                     >Travellers Groups</a
                   >
 
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./msiReports/visaPayment.html"
+                    href="../../msiReports/visaPayment.html"
                     >Visa Paymnets</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./msiReports/visaOnArrival.html"
+                    href="../../managementInformationSystem/visaOnArrival.html"
                     >Visa On Arrival</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-white"
-                    href="./msiReports/visaOnline.html"
+                    href="../../msiReports/visaOnline.html"
                     >Visa Online</a
                   >
 
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="./msiReports/travellersFlight.html"
+                    href="../../msiReports/travellersFlight.html"
                     >Travellers Flight</a
                   >
                 </div>
@@ -716,26 +717,28 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../payments/restorecontrolno.html"
+                    href="../../payments/restorecontrolno.html"
                     >Restore Control No</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../payments/miscellaneousbillvisas.html"
+                    href="../../payments/miscellaneousbillvisas.html"
                     >Miscellaneous Bill Visas</a
                   >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../payments/visa-reseveControl.html"
+                    href="../../payments/visa-reseveControl.html"
                     >Visas-Reserve Control</a
                   >
 
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../payments/passes-reseveControl.html"
+                    href="../../payments/passes-reseveControl.html"
                     >Passes- Reserve Control</a
                   >
                 </div>
@@ -743,6 +746,7 @@
 
               <details
                 class="group flex w-full text-white hover:bg-blue-600 group items-center px-2 py-2 text-sm leading-6 font-bold cursor-pointer rounded-md"
+                open
               >
                 <summary class="relative flex items-center">
                   <svg
@@ -775,15 +779,17 @@
                     />
                   </svg>
                 </summary>
-                <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
+                <div
+                  class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
+                >
                   <a
                     class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
-                    href="../screeningList/registerScreeningList.html"
+                    href="../../screeningList/registerScreeningList.html"
                     >Register Screening List</a
                   >
                   <a
-                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md text-sm"
-                    href="../screeningList/screeningListApproval.html"
+                    class="py-2 flex bg-blue-900 px-4 rounded-md text-sm"
+                    href="../../screeningList/screeningListApproval.html"
                     >Screening List Approval</a
                   >
                 </div>
@@ -812,13 +818,11 @@
               </a>
             </div>
           </nav>
-
         </div>
       </div>
 
       <div class="lg:pl-64 flex flex-col flex-1">
-
-         <!-- Header of the page -->
+        <!-- Header of the page -->
         <div
           class="relative z-10 flex-shrink-0 flex h-6 bg-white lg:border-none"
         >
@@ -850,7 +854,6 @@
             class="flex-1 px-4 flex justify-between sm:px-6 lg:max-w-full lg:mx-auto lg:px-8"
           >
             <div class="flex-1 flex">
-              
               <div
                 class="relative w-full text-gray-400 focus-within:text-gray-600"
               >
@@ -874,14 +877,26 @@
                     aria-expanded="false"
                     aria-haspopup="true"
                   >
-                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-8 w-8"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
                     </div>
                     <span
                       class="hidden ml-3 text-gray-700 text-sm font-bold lg:block"
-                      ><span class="sr-only">Open user menu for </span>User Name</span
+                      ><span class="sr-only">Open user menu for </span>User
+                      Name</span
                     >
                     <!-- Heroicon name: solid/chevron-down -->
                     <svg
@@ -909,7 +924,7 @@
                   tabindex="-1"
                 >
                   <a
-                    href="../../index.html"
+                    href="../../../index.html"
                     class="block px-4 py-2 text-sm"
                     role="menuitem"
                     tabindex="-1"
@@ -940,142 +955,198 @@
             <div
               class="max-w-full mx-auto px-4 flex sm:px-6 lg:px-8 items-center justify-between"
             >
-              <h2
-                class="text-sm md:text-lg leading-6 font-bold text-gray-900"
-              >
-                USER MANAGEMENT
+              <h2 class="text-2xl leading-6 font-bold text-gray-900">
+                SUBJECT DETAILS
               </h2>
+            </div>
 
-              <div class="md:px-2 space-x-2 flex right-0">
-                <button
-                  
-                  data-modal-toggle="newUserModal"
-                  class="px-4 py-2 bg-[#D6F5DB] flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+            <div class="w-full bg-slate-200 py-4 px-8 mt-8 space-y-4">
+              <div class="grid grid-cols-2">
+                <div class="flex flex-col space-y-2 mt-2">
+                  <h class="text-lg"
+                    ><h class="font-bold">Subject ID: </h
+                    >SCR190804040100015344</h
                   >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289C10.8946 3.48043 11 3.73478 11 4V9H16C16.2652 9 16.5196 9.10536 16.7071 9.29289C16.8946 9.48043 17 9.73478 17 10C17 10.2652 16.8946 10.5196 16.7071 10.7071C16.5196 10.8946 16.2652 11 16 11H11V16C11 16.2652 10.8946 16.5196 10.7071 16.7071C10.5196 16.8946 10.2652 17 10 17C9.73478 17 9.48043 16.8946 9.29289 16.7071C9.10536 16.5196 9 16.2652 9 16V11H4C3.73478 11 3.48043 10.8946 3.29289 10.7071C3.10536 10.5196 3 10.2652 3 10C3 9.73478 3.10536 9.48043 3.29289 9.29289C3.48043 9.10536 3.73478 9 4 9H9V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3Z"
-                      fill="#527D27"
-                    />
-                  </svg>
-
-                  <h class="font-bold text-sm text-[#527D27]">New User</h>
-                </button>
-
-                <button
-                  data-modal-toggle="newUserDomainModal"
-                  class="md:py-4 py-2 md:px-6 px-2 bg-[#D6E8F5] flex items-center space-x-2 rounded-md"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <h class="text-lg"
+                    ><h class="font-bold">Status: </h
+                    ><span
+                      class="px-2 py-1 bg-green-300 w-64 rounded-md text-green-900"
+                      >Approved For Screening</span
+                    ></h
                   >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10 3C10.2652 3 10.5196 3.10536 10.7071 3.29289C10.8946 3.48043 11 3.73478 11 4V9H16C16.2652 9 16.5196 9.10536 16.7071 9.29289C16.8946 9.48043 17 9.73478 17 10C17 10.2652 16.8946 10.5196 16.7071 10.7071C16.5196 10.8946 16.2652 11 16 11H11V16C11 16.2652 10.8946 16.5196 10.7071 16.7071C10.5196 16.8946 10.2652 17 10 17C9.73478 17 9.48043 16.8946 9.29289 16.7071C9.10536 16.5196 9 16.2652 9 16V11H4C3.73478 11 3.48043 10.8946 3.29289 10.7071C3.10536 10.5196 3 10.2652 3 10C3 9.73478 3.10536 9.48043 3.29289 9.29289C3.48043 9.10536 3.73478 9 4 9H9V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3Z"
-                      fill="#406B9C"
-                    />
-                  </svg>
+                </div>
 
-                  <h class="font-bold text-sm text-[#406B9C]"
-                    >New User and Domain</h
+                <div class="flex space-x-3">
+                  <button
+                    data-modal-toggle="editModal"
+                    class="bg-green-200 flex flex-col justify-center items-center px-4 border-2 rounded-md border-gray-900"
                   >
-                </button>
+                    <div class="h-14 w-14 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-10 w-10 text-green-900"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        />
+                      </svg>
+                    </div>
+                    <h>Edit General Info</h>
+                  </button>
+
+                  <button
+                    data-modal-toggle="addPhotoModal"
+                    class="bg-blue-200 flex flex-col justify-center items-center px-4 border-2 rounded-md border-gray-900"
+                  >
+                    <div class="h-14 w-14 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-10 w-10 text-blue-900"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <h>Add Subject Photo</h>
+                  </button>
+
+                  <button
+                    data-modal-toggle="scanModal"
+                    class="bg-orange-100 flex flex-col justify-center items-center px-4 border-2 rounded-md border-gray-900"
+                  >
+                    <div class="h-14 w-14 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-10 w-10 text-orange-900"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"
+                        />
+                      </svg>
+                    </div>
+                    <h>Scanned Document</h>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div
-              class="w-full bg-slate-200 py-12 px-12 mt-8 grid md:grid-cols-3 sm:grid-row-3 gap-8"
+              class="w-full bg-blue-200 px-8 flex flex-row space-x-1 mt-1 "
             >
-              <input
-                placeholder="Search by  Full Name"
-                type="text"
-                id="fullname"
-                class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C]  border-slate-300 rounded-md"
-              />
-
-              <input
-                placeholder="Search by User Name"
-                type="text"
-                id="username"
-                class="w-full py-3 px-4 block shadow-sm text-gray-900  focus:outline-[#406B9C] border-slate-300 rounded-md"
-              />
-
-              <button
-                class="h-12 w-full flex justify-center items-center rounded-md px-4 bg-[#406B9C] text-white font-bold text-xl hover:border-2 hover:border-[#406B9C] hover:bg-white hover:text-[#406B9C]"
-              >
-                Search
-              </button>
-
-              <!-- More items... -->
+              <a href="./subjectDetails.html">
+                <div
+                  class="bg-blue-900 text-white h-12 px-4 flex items-center justify-center font-bold"
+                >
+                  Details
+                </div>
+              </a>
+              <a href="./photos.html">
+                <div
+                  class="bg-blue-900  rounded-tl-sm rounded-tr-sm h-12 text-white px-4 flex items-center justify-center font-bold"
+                >
+                  Photos(s)
+                </div>
+              </a>
+              <a href="./scannedDocuments.html">
+                <div
+                  class="bg-blue-900 rounded-tl-sm rounded-tr-sm h-12 px-4 text-white flex items-center justify-center font-bold"
+                >
+                  Scanned Document
+                </div>
+              </a>
+              <a href="./fingerprint.html">
+                <div
+                  class="border-b-4 border-b-blue-900 bg-white  rounded-tl-sm rounded-tr-sm h-12 px-4 text-black flex items-center justify-center font-bold"
+                >
+                  Fingerprint
+                </div>
+              </a>
+              <a href="./history.html">
+                <div
+                  class="bg-blue-900 rounded-tl-sm rounded-tr-sm h-12 px-4 text-white flex items-center justify-center font-bold"
+                >
+                  History
+                </div>
+              </a>
             </div>
+            <div class=" px-6 border-2 pt-4 py-4">
+            
+              <div class=" bg-white border border-black mt-2 grid grid-cols-5 grid-rows-2 gap-2 px-2 py-2">
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>1. RIGHT THUMB</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>2. RIGHT INDEX</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>3. RIGHT MIDDLE</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>4. RIGHT RING</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>5. RIGHT LITTLE</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+
+
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>6. LEFT THUMB</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>7. LEFT INDEX</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>8. LEFT MIDDLE</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>9. LEFT RING</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                <div>
+                    <div class="bg-blue-500 text-white font-bold flex justify-center"><h>10. LEFT LITTLE</h></div>
+                    <div><h>N/A</h></div>
+                </div>
+                
+                
+                
+              </div>
+
+              
+
+            </div>
+
           </div>
 
-          
-
-            <div class="px-8 mx-auto py-2 overflow-auto">
-              <table id="table_id" class="min-w-full divide-y divide-gray-300 mx-auto">
-                <thead class="bg-gray-800">
-                  <tr class="text-white items-center">
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold ss="bg-gray-800m:pl-6"
-                    >
-                      Full Name
-                    </th>
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold ss="bg-gray-800m:pl-6"
-                    >
-                      Username
-                    </th>
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold ss="bg-gray-800m:pl-6"
-                    >
-                      Mobile Number
-                    </th>
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold ss="bg-gray-800m:pl-6"
-                    >
-                      Designation
-                    </th>
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold ss="bg-gray-800m:pl-6"
-                    >
-                      Border Name
-                    </th>
-                    <th
-                      scope="col"
-                      class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold ss="bg-gray-800m:pl-6"
-                    >
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-200 bg-white"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
         </main>
       </div>
     </div>
-
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -1101,84 +1172,81 @@
 
     <!-- <script
       type="text/javascript"
-      src="Editor-2.0.7/js/dataTables.editor.js"
+      src="../management/Editor-2.0.7/js/dataTables.editor.js"
     ></script> -->
 
     <script
-      src="../../js/buttonControls.js"
+      src="../../../../js/buttonControls.js"
       type="text/javascript"
       charset="utf8"
     ></script>
 
-    <script>
+    <!-- <script>
       var json = {
         data: [
           {
             id: "1",
-            DT_RowId: "row_1",
-            full_name: "Test name 1",
-            user_name: "test data",
-            mobile_number: "test data",
-            designation: "8422",
-            Bordername: "2011/07/25",
-          },
-          {
-            id: "2",
-            DT_RowId: "row_2",
-            full_name: "Test data",
-            user_name: "test data",
-            mobile_number: "test data",
-            designation: "8422",
-            Bordername: "2011/07/25",
+            SubjectID: "test dat",
+            givenName: "Test data",
+            surname: "test data",
+            travelDoc: "test data",
+            sourceInsitution: "test data",
+            reference: "test data",
+            type: "test data",
+            status: "test data",
           },
         ],
       };
-
-      function openModal(data) {
-        let parseData = JSON.parse(decodeURIComponent(data));
-        console.log(parseData);
-        // document.getElementById('deleteForm').action = '/delete/' + parseData.id;
-        document.getElementById('deleteMessage').innerHTML = `Are you sure you want to delete ${parseData.full_name}?`;
-        // console.log(data);
-      }
+      var data = [
+        [
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "text data",
+        ],
+      ];
 
       $(document).ready(function () {
         const t_ = $("#table_id").DataTable({
           data: json.data,
           idSrc: "id",
           columns: [
-            { data: "full_name" },
-            { data: "user_name" },
-            { data: "mobile_number" },
-            { data: "designation" },
-            { data: "Bordername" },
+            { data: "SubjectID" },
+            { data: "givenName" },
+            { data: "surname" },
+            { data: "travelDoc" },
+            { data: "sourceInsitution" },
+            { data: "reference" },
+            { data: "type" },
+            { data: "status" },
+
             {
               data: null,
-              render: function(data, type, row, meta) {
+              render: function (data, type, row, meta) {
                 // console.log(data);
-                let stringifiedData = (JSON.stringify(data))
-              
+                let stringifiedData = JSON.stringify(data);
+
                 return `
                 <div class="flex flex-row space-x-4">
 
-                  <button onclick="openModal('${stringifiedData}')" class="block text-white bg-blue-200 hover:bg-blue-700 hover:text-white text-blue-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="editModal">
-                    Edit
-                  </button>
+                  <a href="" class="block text-white bg-blue-200 hover:bg-blue-700 hover:text-white text-blue-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="editModal">
+                    View
+                  </a>
 
-                  <button onclick="openModal('${stringifiedData}')" class="block text-white bg-red-200 hover:bg-red-700 hover:text-white text-red-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="deleteModal">
-                    Delete
-                  </button>
 
                 </div>
                 `;
               },
               orderable: false,
-              searching: false
+              searching: false,
             },
-            
           ],
 
-          dom: "B<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",
+          dom: "<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",
           searching: false,
           targets: 0,
           initComplete: function () {
@@ -1194,174 +1262,336 @@
         console.log(tableBodyRef);
         $(tableBodyRef).addClass("divide-y");
       });
-    </script>
+    </script> -->
 
+    <!-- Edit General Information Modal -->
+    <div
+      id="editModal"
+      tabindex="-1"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full bg-[#80808055]"
+    >
+      <div class="relative p-4 w-full max-w-7xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow">
+          <!-- Modal header -->
+          <div
+            class="flex justify-between items-center p-5 rounded-t border-b-2 border-b-black"
+          >
+            <h3 class="text-xl font-medium text-gray-900">Edit General Info</h3>
+            <button
+              type="button"
+              class="text-black bg-transparent hover:bg-red-200 hover:text-red-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="editModal"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-6 space-y-6">
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-8 pb-12">
+              <div class="space-y-2">
+                <h>Reporting Officer</h>
+                <input
+                  placeholder="Officer name"
+                  type="text"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
 
+              <div class="space-y-2">
+                <h>Justification</h>
+                <input
+                  placeholder=""
+                  type="text"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+              <div class="space-y-2">
+                <h>Contant Person</h>
+                <input
+                  placeholder="Contant"
+                  type="text"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
 
-<!-- Delete modal -->
-    <div id="deleteModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto drop-shadow-xl">
-            <div class="relative bg-white rounded-lg shadow ">
-              <form action="" id="deleteForm" method="post">
-                <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:text-red-200 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="deleteModal">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                </button>
-                <div class="p-6 text-center">
-                    <svg class="mx-auto mb-4 w-14 h-14 text-red-400 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h3 class="mb-5 text-lg font-normal text-black" id="deleteMessage">Are you sure you want to delete this ?</h3>
-                    <button data-modal-toggle="deleteModal" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                        Yes, I'm sure
-                    </button>
-                    <button data-modal-toggle="deleteModal" type="button" class="text-green-900 bg-white focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-green-600 text-sm font-medium px-5 py-2.5  focus:z-10 ">No, Cancel</button>
-                </div>
-              </form>
+              <div class="space-y-2 flex flex-col">
+                <h>Changing Country</h>
+                <select
+                  name="all_pendings"
+                  class="px-4 py-4 bg-white rounded-md border border-black"
+                >
+                  <option value="all pendings">
+                    Seacrch by source institution
+                  </option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <h>Reference No.</h>
+                <input
+                  placeholder="Reference Number"
+                  type="text"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <h>Warrant Date</h>
+                <input
+                  type="date"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <h>Source Institution</h>
+                <input
+                  placeholder="Institution"
+                  type="text"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <h>Reason</h>
+                <input
+                  placeholder="Reason"
+                  type="text"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <h>Remark</h>
+                <input
+                  placeholder="Remark"
+                  type="text"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+
+              <div class="h-full w-full flex space-x-4 items-center">
+                <input
+                  type="checkbox"
+                  class="py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+                <label>Valid For Life Time</label>
+              </div>
+
+              <div class="space-y-2">
+                <h>Valid Date Start</h>
+                <input
+                  placeholder="Remark"
+                  type="date"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <h>Valid Date End</h>
+                <input
+                  placeholder="Remark"
+                  type="date"
+                  class="w-full py-3 px-4 block shadow-sm text-gray-900 focus:outline-[#406B9C] border border-black rounded-md"
+                />
+              </div>
+
+              <div class="space-y-2 flex flex-col">
+                <h>Screening List Type</h>
+                <select
+                  name="all_pendings"
+                  class="px-4 py-4 bg-white rounded-md border border-black"
+                >
+                  <option value="all pendings">
+                    Select Screenig List Type
+                  </option>
+                </select>
+              </div>
+
+              <div class="space-y-2 flex flex-col">
+                <h>Screening Action</h>
+                <select
+                  name="all_pendings"
+                  class="px-4 py-4 bg-white rounded-md border border-black"
+                >
+                  <option value="all pendings">Select Screenig Action</option>
+                </select>
+              </div>
             </div>
+          </div>
+          <!-- Modal footer -->
+          <div
+            class="flex items-center justify-end p-6 space-x-2 rounded-b border-t-2 border-t-black border-gray-200"
+          >
+            <button
+              data-modal-toggle="editModal"
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+            >
+              Save Data
+            </button>
+            <button
+              data-modal-toggle="editModal"
+              type="button"
+              class="text-black hover:text-white bg-red-300 hover:bg-red-800 rounded-lg text-sm font-medium px-5 py-2.5"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
-
-<!-- Edit Modal  -->
-    <div id="editModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-      <div class="relative p-4 h-full w-full max-w-lg  md:h-auto drop-shadow-xl">
-            <div class="relative bg-white rounded-lg shadow ">
-              <form action="" id="editForm" method="post">
-                <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:text-red-200 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="editModal">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                </button>
-                <div class="p-6 space-y-4 py-12">
-                    <div class="flex flex-col">
-                      <label>Full name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                     <div class="flex flex-col">
-                      <label>User name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                     <div class="flex flex-col">
-                      <label>Mobile Number</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
-                    </div>
-
-                    <div class="flex flex-col">
-                      <label>Designation</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                    <div class="flex flex-col">
-                      <label>Boder name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                    <!-- Action buttons  -->
-                    <div class="flex items-center justify-end w-full">
-                      <button data-modal-toggle="editModal" class="text-green-900 hover:text-white hover:border-0  hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                          Yes,Edit
-                      </button>
-                      <button data-modal-toggle="editModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
-                    </div>
-                </div>
-              </form>
-            </div>
+    <!-- Add Subject Photos Modal -->
+    <div
+      id="addPhotoModal"
+      tabindex="-1"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full bg-[#80808055]"
+    >
+      <div class="relative p-4 w-full max-w-3xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow">
+          <!-- Modal header -->
+          <div
+            class="flex justify-between items-center p-5 rounded-t border-b border-b-black"
+          >
+            <h3 class="text-xl font-medium text-gray-900">Add Subject Photo</h3>
+            <button
+              type="button"
+              class="text-black bg-transparent hover:bg-red-200 hover:text-red-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="addPhotoModal"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-6 space-y-6">
+            <h>Select Photo</h>
+            <input
+              type="file"
+              class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 hover:cursor-pointer"
+            />
+          </div>
+          <!-- Modal footer -->
+          <div
+            class="flex items-center justify-end p-6 space-x-2 rounded-b border-t border-t-black border-gray-200"
+          >
+            <button
+              data-modal-toggle="addPhotoModal"
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+            >
+              Upload
+            </button>
+            <button
+              data-modal-toggle="addPhotoModal"
+              type="button"
+              class="text-black hover:text-white bg-red-300 hover:bg-red-800 rounded-lg text-sm font-medium px-5 py-2.5"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
-<!-- New user modal -->
-    <div id="newUserModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-      <div class="relative p-4 h-full w-full max-w-lg  md:h-auto drop-shadow-xl">
-            <div class="relative bg-white rounded-lg shadow ">
-              <form action="" method="post">
-                <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:text-red-200 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="newUserModal">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                </button>
-                <div class="p-6 space-y-4 py-12">
-                    <div class="flex flex-col">
-                      <label>Full name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
+    <!-- Scanned Document Modal -->
+    <div
+      id="scanModal"
+      tabindex="-1"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full bg-[#80808055]"
+    >
+      <div class="relative p-4 w-full max-w-3xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow">
+          <!-- Modal header -->
+          <div
+            class="flex justify-between items-center p-5 rounded-t border-b border-b-black"
+          >
+            <h3 class="text-xl font-medium text-gray-900">
+              Upload Scanned Document
+            </h3>
+            <button
+              type="button"
+              class="text-black bg-transparent hover:bg-red-200 hover:text-red-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              data-modal-toggle="scanModal"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-6 space-y-6">
+            <h>Select Document</h>
+            <input
+              type="file"
+              class="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+            />
 
-                     <div class="flex flex-col">
-                      <label>User name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                     <div class="flex flex-col">
-                      <label>Mobile Number</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
-                    </div>
-
-                    <div class="flex flex-col">
-                      <label>Designation</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                    <div class="flex flex-col">
-                      <label>Boder name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                    <!-- Action buttons  -->
-                    <div class="flex items-center justify-end w-full">
-                      <button data-modal-toggle="newUserModal" class="text-green-900 hover:text-white hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                          Add, New User
-                      </button>
-                      <button data-modal-toggle="newUserModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
-                    </div>
-                </div>
-              </form>
+            <div class="mt-2 space-y-2">
+              <h>Description</h>
+              <input
+                type="textarea"
+                class="w-full rounded-md h-24 border border-black focus:outline-blue-700 px-2"
+              />
             </div>
+          </div>
+          <!-- Modal footer -->
+          <div
+            class="flex items-center justify-end p-6 space-x-2 rounded-b border-t border-t-black border-gray-200"
+          >
+            <button
+              data-modal-toggle="scanModal"
+              type="button"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700"
+            >
+              Upload
+            </button>
+            <button
+              data-modal-toggle="scanModal"
+              type="button"
+              class="text-black hover:text-white bg-red-300 hover:bg-red-800 rounded-lg text-sm font-medium px-5 py-2.5"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
-<!-- New user with Domain Model -->
-<div id="newUserDomainModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-      <div class="relative p-4 h-full w-full max-w-lg  md:h-auto drop-shadow-xl">
-            <div class="relative bg-white rounded-lg shadow ">
-              <form action="" method="post">
-                <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:text-red-200 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="newUserDomainModal">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
-                </button>
-                <div class="p-6 space-y-4 py-12">
-                    <div class="flex flex-col">
-                      <label>Full name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                     <div class="flex flex-col">
-                      <label>User name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                     <div class="flex flex-col">
-                      <label>Mobile Number</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
-                    </div>
-
-                    <div class="flex flex-col">
-                      <label>Designation</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                    <div class="flex flex-col">
-                      <label>Boder name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
-                    </div>
-
-                    <!-- Action buttons  -->
-                    <div class="flex items-center justify-end w-full">
-                      <button data-modal-toggle="newUserDomainModal" class="text-green-900 hover:text-white hover:border-0  hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                          Add, New User
-                      </button>
-                      <button data-modal-toggle="newUserDomainModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
-                    </div>
-                </div>
-              </form>
-            </div>
-        </div>
-    </div>
-
-
-<script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
   </body>
 </html>

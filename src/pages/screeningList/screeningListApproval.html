@@ -1052,6 +1052,12 @@
                   >
                     Status
                   </th>
+                  <th
+                    scope="col"
+                    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold  sm:pl-6"
+                  >
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 bg-white"></tbody>
@@ -1097,14 +1103,63 @@
     <script>
      
 
+      var json = {
+        data: [
+          {
+            id: "1",
+            SubjectID: "test dat",
+            givenName: "Test data",
+            surname: "test data",
+            travelDoc: "test data",
+            sourceInsitution: "test data",
+            reference: "test data",
+            type:"test data",
+            status:"test data"
+          },
+          
+        ],
+      };
       var data = [
         ["test data", "test data","test data","test data","test data","test data","test data", "text data"]
       ];
 
       $(document).ready(function () {
         const t_ = $("#table_id").DataTable({
-          data: data,
+          data: json.data,
           idSrc: "id",
+          columns: [
+            { data: "SubjectID" },
+            { data: "givenName" },
+            { data: "surname" },
+            { data: "travelDoc" },
+            { data: "sourceInsitution" },
+            { data: "reference" },
+            { data: "type" },
+            { data: "status" },
+            
+            {
+              data: null,
+              render: function(data, type, row, meta) {
+                // console.log(data);
+                let stringifiedData = (JSON.stringify(data))
+              
+                return `
+                <div class="flex flex-row space-x-4">
+
+                  <a href="./subjectDetails/subjectDetails.html" class="block text-white bg-blue-200 hover:bg-blue-700 hover:text-white text-blue-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="editModal">
+                    View
+                  </a>
+
+
+                </div>
+                `;
+              },
+            orderable: false,
+              searching: false
+            }
+            ],
+         
+          
          
 
           dom: "<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",

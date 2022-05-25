@@ -1058,15 +1058,15 @@
         data: [
           {
             DT_RowId: "row_1",
-            Airline: "Garrett Winters",
-            Is_Obselete: "Director",
+            Airline: "test data",
+            Is_Obselete: "test data",
            
            
           },
           {
             DT_RowId: "row_2",
-            Airline: "Garrett Winters",
-            Is_Obselete: "Director",
+            Airline: "test data",
+            Is_Obselete: "test data",
             
           },
         ],
@@ -1108,13 +1108,7 @@
           dom: "<'py-4 px-6  flex items-center justify-between'<''l><'font-medium'i>><'bg-red-400't><'py-4'p>",
           searching: false,
           targets: 0,
-          initComplete: function () {
-            const that = this.api();
-            $("#input1").on("keyup change clear", function () {
-              console.log("Fire");
-              that.column(3).search(this.value).draw();
-            });
-          },
+          
         });
 
         

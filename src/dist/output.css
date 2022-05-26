@@ -1642,6 +1642,10 @@ table#table_id tbody tr.even{
           text-decoration-line: none;
 }
 
+/* .sorting input{
+  @apply text-black px-2 h-7 w-48 placeholder:to-blue-600 placeholder-blue-600 rounded-md;
+} */
+
 .file\:mr-4::-webkit-file-upload-button{
   margin-right: 1rem;
 }
@@ -2151,6 +2155,4 @@ table#table_id tbody tr.even{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-
 

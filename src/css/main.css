@@ -33,5 +33,7 @@ table#table_id tbody tr.even {
   @apply mt-12 bg-slate-700 px-4 py-2 text-white rounded-sm no-underline  ;
 }
 
-
+/* .sorting input{
+  @apply text-black px-2 h-7 w-48 placeholder:to-blue-600 placeholder-blue-600 rounded-md;
+} */
 

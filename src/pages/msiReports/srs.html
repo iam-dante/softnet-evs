@@ -1045,13 +1045,20 @@
         </main>
       </div>
     </div>
-
+    
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
     ></script>
+    
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.js"
+    ></script>
+
+
 
     <script
       type="text/javascript"
@@ -1059,11 +1066,21 @@
       src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
     ></script>
 
+    
     <script
       type="text/javascript"
-      src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"
+      src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"
     ></script>
 
+     
+
+
+
+    <script
+    type="text/javascript"
+    src="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.js"
+    ></script>
+    
     <!-- <script
       type="text/javascript"
       src="../management/Editor-2.0.7/js/dataTables.editor.js"
@@ -1130,9 +1147,26 @@
           "test data",
           "text data",
         ],
+        [
+          "brian test ",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "test data",
+          "text data",
+        ],
+
       ];
 
       $(document).ready(function () {
+
+        $('#table_id thead tr')
+        .clone(true)
+        .addClass('filters')
+        // .appendTo('#table_id thead');
+
         const t_ = $("#table_id").DataTable({
           data: data,
           buttons: ["colvis"],
@@ -1142,12 +1176,52 @@
           searching: false,
           targets: 0,
           initComplete: function () {
-            const that = this.api();
-            $("#input1").on("keyup change clear", function () {
-              console.log("Fire");
-              that.column(3).search(this.value).draw();
-            });
-          },
+            var api = this.api();
+ 
+            // For each column
+            api
+                .columns()
+                .eq(0)
+                .each(function (colIdx) {
+                    // Set the header cell to contain the input element
+                    var cell = $('.filters th').eq(
+                        $(api.column(colIdx).header()).index()
+                    );
+                    var title = $(cell).text();
+                    $(cell).html('<input type="text" class="text-black px-2 py-2 flex" placeholder="' + title + '" />');
+ 
+                    // On every keypress in this input
+                    $(
+                        'input',
+                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                    )
+                        .off('keyup change')
+                        .on('keyup change', function (e) {
+                            e.stopPropagation();
+ 
+                            // Get the search value
+                            $(this).attr('title', $(this).val());
+                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+ 
+                            var cursorPosition = this.selectionStart;
+                            // Search the column for that value
+                            api
+                                .column(colIdx)
+                                .search(
+                                    this.value != ''
+                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                        : '',
+                                    this.value != '',
+                                    this.value == ''
+                                )
+                                .draw();
+ 
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                        });
+                });
+        },
         });
 
         const tableBodyRef = t_.table().body();

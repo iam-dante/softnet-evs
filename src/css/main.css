@@ -11,7 +11,27 @@ table#table_id tbody tr.even {
   @apply bg-slate-200;
 }
 
+/* column visibility button */
 
-.dt-button .buttons-collection .buttons-colvis{
-  @apply bg-none
+.datatable-button{
+  @apply px-2 bg-slate-700 py-2 rounded-sm text-white cursor-pointer;
 }
+
+.buttons-colvis {
+  @apply datatable-button
+}
+
+/* .buttons-pdf{
+  @apply px-2 bg-slate-700 py-2 rounded-sm text-white cursor-pointer;
+} */
+
+.buttons-columnVisibility{
+  @apply bg-slate-300 line-through px-4 py-2 text-black rounded-sm ;
+}
+
+.buttons-columnVisibility.active{
+  @apply mt-12 bg-slate-700 px-4 py-2 text-white rounded-sm no-underline  ;
+}
+
+
+

@@ -1581,8 +1581,65 @@ table#table_id tbody tr.even{
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
-.dt-button .buttons-collection .buttons-colvis{
-  background-image: none;
+/* column visibility button */
+
+.datatable-button{
+  cursor: pointer;
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.buttons-colvis{
+  cursor: pointer;
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+/* .buttons-pdf{
+  @apply px-2 bg-slate-700 py-2 rounded-sm text-white cursor-pointer;
+} */
+
+.buttons-columnVisibility{
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+}
+
+.buttons-columnVisibility.active{
+  margin-top: 3rem;
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .file\:mr-4::-webkit-file-upload-button{
@@ -2094,3 +2151,6 @@ table#table_id tbody tr.even{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+
+

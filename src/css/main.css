@@ -1,11 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 table#table_id tbody tr.odd {
-  @apply bg-white ;
+  @apply bg-white;
 }
 table#table_id tbody tr.even {
   @apply bg-slate-200;
+}
+
+
+.dt-button .buttons-collection .buttons-colvis{
+  @apply bg-none
 }

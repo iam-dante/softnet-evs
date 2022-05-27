@@ -1134,13 +1134,13 @@
         ],
       };
 
-      function openModal(data) {
-        let parseData = JSON.parse(decodeURIComponent(data));
-        console.log(parseData);
-        // document.getElementById('deleteForm').action = '/delete/' + parseData.id;
-        document.getElementById('deleteMessage').innerHTML = `Are you sure you want to delete ${parseData.full_name}?`;
-        // console.log(data);
-      }
+      // function openModal(data) {
+      //   let parseData = JSON.parse(decodeURIComponent(data));
+      //   console.log(parseData);
+      //   // document.getElementById('deleteForm').action = '/delete/' + parseData.id;
+      //   document.getElementById('deleteMessage').innerHTML = `Are you sure you want to delete ${parseData.full_name}?`;
+      //   // console.log(data);
+      // }
 
       $(document).ready(function () {
       
@@ -1164,12 +1164,23 @@
                 return `
                 <div class="flex flex-row space-x-4">
 
-                  <button onclick="openModal('${stringifiedData}')" class="block text-white bg-blue-200 hover:bg-blue-700 hover:text-white text-blue-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="editModal">
-                    Edit
+                  <button  class="block text-white bg-blue-200 hover:bg-blue-700 hover:text-white text-blue-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="editModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
                   </button>
 
-                  <button onclick="openModal('${stringifiedData}')" class="block text-white bg-red-200 hover:bg-red-700 hover:text-white text-red-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="deleteModal">
-                    Delete
+                  <button  class="block text-white bg-red-200 hover:bg-red-700 hover:text-white text-red-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="passwordModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                    </svg>
+                  </button>
+
+                  <button  class="block text-white bg-green-200 hover:bg-green-700 hover:text-white text-green-900  font-bold rounded text-sm px-2 py-2 text-center" type="button" data-modal-toggle="viewModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
                   </button>
 
                 </div>
@@ -1195,21 +1206,35 @@
 
 
 
-<!-- Delete modal -->
-    <div id="deleteModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto drop-shadow-xl">
+<!-- Password modal -->
+    <div id="passwordModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
+        <div class="relative p-4 w-full max-w-xl h-full md:h-auto drop-shadow-xl">
             <div class="relative bg-white rounded-lg shadow ">
               <form action="" id="deleteForm" method="post">
-                <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:bg-red-300 hover:text-red-600  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="deleteModal">
+                <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:bg-red-300 hover:text-red-600  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="passwordModal">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                 </button>
-                <div class="p-6 text-center">
-                    <svg class="mx-auto mb-4 w-14 h-14 text-red-400 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h3 class="mb-5 text-lg font-normal text-black" id="deleteMessage">Are you sure you want to delete this ?</h3>
-                    <button data-modal-toggle="deleteModal" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                        Yes, I'm sure
-                    </button>
-                    <button data-modal-toggle="deleteModal" type="button" class="text-green-900 bg-white focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-green-600 text-sm font-medium px-5 py-2.5  focus:z-10 ">No, Cancel</button>
+                <div class="p-6  py-8 space-y-4 ">
+
+                 <h>RESET PASSWORD FOR TEST DATA</h>
+                 <div class="space-y-6">
+
+                   <div class="flex flex-col">
+                     <label>New Password</label>
+                     <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="New Password" type="text"/>
+                   </div>
+
+                   <div class="flex flex-col">
+                     <label>Confrim Password</label>
+                     <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Confrim Password" type="text"/>
+                   </div>
+                 </div>
+                  <div class="flex items-center justify-end w-full">
+                      <button data-modal-toggle="passwordModal" class="text-green-900 hover:text-white bg-green-200 hover:bg-green-900  font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                          Yes,Reset
+                      </button>
+                      <button data-modal-toggle="passwordModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
+                    </div>
                 </div>
               </form>
             </div>
@@ -1219,40 +1244,93 @@
 
 <!-- Edit Modal  -->
     <div id="editModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-      <div class="relative p-4 h-full w-full max-w-lg  md:h-auto drop-shadow-xl">
+      <div class="relative p-4 h-full w-full max-w-3xl  md:h-auto drop-shadow-xl">
             <div class="relative bg-white rounded-lg shadow ">
               <form action="" id="editForm" method="post">
-                <button type="button" class="absolute top-3 right-2.5  bg-transparent hover:bg-red-300 hover:text-red-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center  " data-modal-toggle="editModal">
+                <button type="button" class="absolute top-3 right-2.5  bg-transparent hover:bg-red-300 hover:text-red-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="editModal">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                 </button>
-                <div class="p-6 space-y-4 py-12">
+                <div class="p-6 gap-2 py-8 grid grid-cols-2">
                     <div class="flex flex-col">
                       <label>Full name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Full name" type="text"/>
                     </div>
 
                      <div class="flex flex-col">
                       <label>User name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="User name" type="text"/>
                     </div>
 
                      <div class="flex flex-col">
                       <label>Mobile Number</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Mobile number" type="tel"/>
                     </div>
 
                     <div class="flex flex-col">
                       <label>Designation</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Designation" type="text"/>
                     </div>
 
                     <div class="flex flex-col">
                       <label>Boder name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Border name" type="text"/>
                     </div>
 
+                  </div>
+                  <div class=" p-4 bg-slate-200">
+                    <h class="font-bold">ROLES(s)</h>
+                    <div class="grid grid-cols-3 gap-2 mt-4">
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Accounting</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Accounting Supervisor</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Primary Officer</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Reserve Control No</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Screening Approval</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Screening List Manage</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Access Passport Control DB</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Supervisor Officer</label>
+                      </div>
+
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>System Administrator</label>
+                      </div>
+                    </div>
+
+                  </div>
+
                     <!-- Action buttons  -->
-                    <div class="flex items-center justify-end w-full">
+                    <div class="flex items-center justify-end w-full p-4">
                       <button data-modal-toggle="editModal" class="text-green-900 hover:text-white hover:border-0  hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                           Yes,Edit
                       </button>
@@ -1460,6 +1538,71 @@
                     </button>
                     <button data-modal-toggle="newUserModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
                   </div>
+              </form>
+            </div>
+        </div>
+    </div>
+
+
+<!-- View Modal -->
+<div id="viewModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
+      <div class="relative p-4 h-full w-full max-w-3xl md:h-auto drop-shadow-xl">
+            <div class="relative bg-white rounded-lg shadow ">
+              <form action="" method="post">
+                <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:bg-red-300 hover:text-red-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="viewModal">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                </button>
+                <div class="p-6  py-8  space-y-4">
+                    <h class="font-bold text-lg">USER DETAILS</h>
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Full Name: </h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Designation</h></div>
+                      <div><h>test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Mobile No.: </h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Border Name: </h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">User Name: </h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Create Date: </h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Create By: </h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Is Obselete</h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    <div class="flex space-x-4 border-b-2 border-b-slate-300">
+                      <div><h class="font-bold">Roles: </h></div>
+                      <div><h> test data </h></div>
+                    </div>
+
+                    
+                </div>
+                  
+                  
               </form>
             </div>
         </div>

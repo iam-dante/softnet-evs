@@ -1266,46 +1266,97 @@
 
 <!-- New user modal -->
     <div id="newUserModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-      <div class="relative p-4 h-full w-full max-w-lg  md:h-auto drop-shadow-xl">
+      <div class="relative p-4 h-full w-full max-w-3xl md:h-auto drop-shadow-xl">
             <div class="relative bg-white rounded-lg shadow ">
               <form action="" method="post">
                 <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:bg-red-300 hover:text-red-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="newUserModal">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                 </button>
-                <div class="p-6 space-y-4 py-12">
+                <div class="p-6 gap-2 py-8 grid grid-cols-2">
                     <div class="flex flex-col">
                       <label>Full name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Full name" type="text"/>
                     </div>
 
                      <div class="flex flex-col">
                       <label>User name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="User name" type="text"/>
                     </div>
 
                      <div class="flex flex-col">
                       <label>Mobile Number</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Mobile number" type="tel"/>
                     </div>
 
                     <div class="flex flex-col">
                       <label>Designation</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Designation" type="text"/>
                     </div>
 
                     <div class="flex flex-col">
                       <label>Boder name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Border name" type="text"/>
                     </div>
 
-                    <!-- Action buttons  -->
-                    <div class="flex items-center justify-end w-full">
-                      <button data-modal-toggle="newUserModal" class="text-green-900 hover:text-white hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                          Add, New User
-                      </button>
-                      <button data-modal-toggle="newUserModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
+                  </div>
+                  <div class=" p-4 bg-slate-200">
+                    <h class="font-bold">ROLES(s)</h>
+                    <div class="grid grid-cols-3 gap-2 mt-4">
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Accounting</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Accounting Supervisor</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Primary Officer</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Reserve Control No</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Screening Approval</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Screening List Manage</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Access Passport Control DB</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Supervisor Officer</label>
+                      </div>
+
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>System Administrator</label>
+                      </div>
                     </div>
-                </div>
+
+                  </div>
+                  <!-- Action buttons  -->
+                  <div class="flex items-center justify-end w-full p-4">
+                    <button data-modal-toggle="newUserModal" class="text-green-900 hover:text-white hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                        Add, New User
+                    </button>
+                    <button data-modal-toggle="newUserModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
+                  </div>
               </form>
             </div>
         </div>
@@ -1313,46 +1364,102 @@
 
 <!-- New user with Domain Model -->
 <div id="newUserDomainModal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]">
-      <div class="relative p-4 h-full w-full max-w-lg  md:h-auto drop-shadow-xl">
+      <div class="relative p-4 h-full w-full max-w-3xl  md:h-auto drop-shadow-xl">
             <div class="relative bg-white rounded-lg shadow ">
               <form action="" method="post">
                 <button type="button" class="absolute top-3 right-2.5  bg-transparent  hover:bg-red-300 hover:text-red-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-toggle="newUserDomainModal">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                 </button>
-                <div class="p-6 space-y-4 py-12">
+                <div class="p-6 gap-2 py-8 grid grid-cols-2">
                     <div class="flex flex-col">
                       <label>Full name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Full name" type="text"/>
                     </div>
 
                      <div class="flex flex-col">
                       <label>User name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="User name" type="text"/>
                     </div>
 
                      <div class="flex flex-col">
                       <label>Mobile Number</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Mobile number" type="tel"/>
                     </div>
 
                     <div class="flex flex-col">
                       <label>Designation</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Designation" type="text"/>
                     </div>
 
                     <div class="flex flex-col">
-                      <label>Boder name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <label>New Password</label>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="New Password" type="text"/>
                     </div>
 
-                    <!-- Action buttons  -->
-                    <div class="flex items-center justify-end w-full">
-                      <button data-modal-toggle="newUserDomainModal" class="text-green-900 hover:text-white hover:border-0  hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                          Add, New User
-                      </button>
-                      <button data-modal-toggle="newUserDomainModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
+                    <div class="flex flex-col">
+                      <label>Confrim Password</label>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Confrim Password" type="text"/>
                     </div>
-                </div>
+
+                  </div>
+                  <div class=" p-4 bg-slate-200">
+                    <h class="font-bold">ROLES(s)</h>
+                    <div class="grid grid-cols-3 gap-2 mt-4">
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Accounting</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Accounting Supervisor</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Primary Officer</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Reserve Control No</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Screening Approval</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Screening List Manage</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Access Passport Control DB</label>
+                      </div>
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>Supervisor Officer</label>
+                      </div>
+
+
+                      <div class="flex items-center space-x-4">
+                        <input type="checkbox"/>
+                        <label>System Administrator</label>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- Action buttons  -->
+                  <div class="flex items-center justify-end w-full p-4">
+                    <button data-modal-toggle="newUserModal" class="text-green-900 hover:text-white hover:bg-green-800 border-2 border-green-500 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                        Add, New User
+                    </button>
+                    <button data-modal-toggle="newUserModal"  class="bg-red-700 text-white rounded-md  text-sm font-medium px-5 py-2.5">Cancel</button>
+                  </div>
               </form>
             </div>
         </div>

@@ -1114,9 +1114,7 @@
         
         
 
-        
-
-         
+    
 
         const tableBodyRef = t_.table().body();
         console.log(tableBodyRef);
@@ -1136,17 +1134,22 @@
                 <div class="p-6 space-y-4 py-12">
                     <div class="flex flex-col">
                       <label>Country Name</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Country name" type="text"/>
                     </div>
 
                      <div class="flex flex-col">
                       <label>Ports</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="text"/>
+                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" placeholder="Ports" type="text"/>
                     </div>
 
-                     <div class="flex flex-col">
+                      <div class="flex flex-col">
                       <label>Is Obselete</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
+                      <select class="h-9 px-2 bg-white border-2 border-slate-500">
+                        <option value="yes" class="px-2">Select Is Obselete</option>
+                        <option value="yes" class="px-2">Yes</option>
+                        <option value="no" class="px-2">No</option>
+                       
+                      </select>
                     </div>
 
                     
@@ -1207,7 +1210,12 @@
 
                      <div class="flex flex-col">
                       <label>Is Obselete</label>
-                      <input class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm" type="tel"/>
+                      <select class="h-9 px-2 bg-white border-2 border-slate-500">
+                        <option value="yes" class="px-2">Select Is Obselete</option>
+                        <option value="yes" class="px-2">Yes</option>
+                        <option value="no" class="px-2">No</option>
+                       
+                      </select>
                     </div>
 
                     <!-- Action buttons  -->

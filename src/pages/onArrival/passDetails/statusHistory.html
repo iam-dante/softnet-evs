@@ -29,7 +29,7 @@
       href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css"
     />
 
-    <title>Visa Details</title>
+    <title>Pass Details</title>
     <link rel="icon" type="image/x-icon" href="../../../images/favicon.ico" />
   </head>
   <body>
@@ -207,12 +207,12 @@
                 </summary>
                 <div class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium">
                   <a
-                    class="py-2 flex bg-blue-900 px-4 rounded-md"
+                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
                     href="../../onArrival/visas.html"
                     >Visas</a
                   >
                   <a
-                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
+                    class="py-2 flex bg-blue-900 px-4 rounded-md"
                     href="../../onArrival/passes.html"
                     >Passes</a
                   >
@@ -588,12 +588,12 @@
                   class="bg-blue-600 px-4 py-4 rounded-md mt-2 font-medium space-y-2"
                 >
                   <a
-                    class="py-2 flex bg-blue-900 px-4 rounded-md"
+                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
                     href="../../onArrival/visas.html"
                     >Visas</a
                   >
                   <a
-                    class="py-2 flex hover:bg-blue-900 px-4 rounded-md"
+                    class="py-2 flex bg-blue-900 px-4 rounded-md"
                     href="../../onArrival/passes.html"
                     >Passes</a
                   >
@@ -958,36 +958,13 @@
               class="max-w-full mx-auto px-4 flex sm:px-6 lg:px-8 items-center justify-between"
             >
               <h2 class="text-2xl leading-6 font-bold text-gray-900">
-                VISA DETAILS
+                PASS DETAILS
               </h2>
             </div>
 
             <div class="w-full bg-slate-200 py-4 px-8 mt-8 space-y-4">
               <div class="grid">
                 <div class="flex space-x-3 justify-end w-full">
-                  <button
-                    data-modal-toggle="updateVisaModal"
-                    class="bg-orange-100 flex flex-col text-sm justify-center items-center px-4 border-2 rounded-md border-gray-900"
-                  >
-                    <div class="h-14 w-14 flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-8 w-8"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                        />
-                      </svg>
-                    </div>
-                    <h>Update Visa Type</h>
-                  </button>
-
                   <button
                     data-modal-toggle="updateCriteriaModal"
                     class="bg-orange-100 flex flex-col text-sm justify-center items-center px-4 border-2 rounded-md border-gray-900"
@@ -1012,30 +989,6 @@
                   </button>
 
                   <button
-                    data-modal-toggle="stayModal"
-                    class="bg-orange-100 flex flex-col justify-center items-center px-4 border-2 rounded-md border-gray-900"
-                  >
-                    <div class="h-14 w-14 flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-8 w-8"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
-                        />
-                      </svg>
-                    </div>
-                    <h>Stay Duration</h>
-                  </button>
-
-                  <button
-                    
                     class="bg-orange-100 flex flex-col justify-center items-center px-4 border-2 rounded-md border-gray-900"
                   >
                     <div class="h-14 w-14 flex items-center justify-center">
@@ -1058,49 +1011,24 @@
                   </button>
 
                   <button
-                    
                     class="bg-orange-100 flex flex-col justify-center items-center px-4 border-2 rounded-md border-gray-900"
                   >
                     <div class="h-14 w-14 flex items-center justify-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="h-8 w-8"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
+                        class="h-10 w-10"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
+                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                          fill-rule="evenodd"
+                          d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                          clip-rule="evenodd"
                         />
                       </svg>
                     </div>
-                    <h>Upload</h>
-                  </button>
-
-                  <button
-                    
-                    class="bg-orange-100 flex flex-col justify-center items-center px-4 border-2 rounded-md border-gray-900"
-                  >
-                    <div class="h-14 w-14 flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-8 w-8"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                        />
-                      </svg>
-                    </div>
-                    <h class="">Reserved Control No</h>
+                    <h>Check Payment</h>
                   </button>
                 </div>
               </div>
@@ -1109,151 +1037,60 @@
             <div class="w-full bg-slate-200 px-8 flex flex-row space-x-1">
               <a href="./details.html">
                 <div
-                  class=" text-white bg-blue-900 h-12 px-4 flex items-center justify-center font-bold"
+                  class="bg-blue-900 text-white h-12 px-4 flex items-center justify-center font-bold"
                 >
                   Details
                 </div>
               </a>
-              <a href="./travelInfromation.html">
-                <div
-                  class="  bg-blue-900 rounded-tl-sm rounded-tr-sm h-12 text-white px-4 flex items-center justify-center font-bold"
-                >
-                  Travel Information
-                </div>
-              </a>
-              
+
               <a href="./bill.html">
                 <div
-                  class="bg-white border-b-4 text-black border-b-blue-900 rounded-tl-sm rounded-tr-sm h-12 px-4  flex items-center justify-center font-bold"
+                  class="bg-blue-900 text-white rounded-tl-sm rounded-tr-sm h-12 px-4 flex items-center justify-center font-bold"
                 >
                   Bill
                 </div>
               </a>
-              <a href="./visa.html">
-                <div
-                  class="bg-blue-900 rounded-tl-sm rounded-tr-sm h-12 px-4 text-white flex items-center justify-center font-bold"
-                >
-                  Visa
-                </div>
-              </a>
+
               <a href="./statusHistory.html">
                 <div
-                  class="bg-blue-900 rounded-tl-sm rounded-tr-sm h-12 px-4 text-white flex items-center justify-center font-bold"
+                  class="bg-white border-b-4 text-black border-b-blue-900 rounded-tl-sm rounded-tr-sm h-12 px-4  flex items-center justify-center font-bold"
                 >
                   Status History
                 </div>
               </a>
             </div>
             <div class="bg-slate-50 px-6 border-2 py-4">
-              
-
               <div>
-                <div
-                  class="w-full bg-slate-800 text-white flex items-center font-bold px-2 h-12"
-                >
-                  <h>BILL DETAILS</h>
-                </div>
-                <div class="grid grid-cols-3 px-2 py-4 gap-4">
-                  <div class="flex flex-col">
-                    <label class="font-bold">Bill Amount: </label>
-                    <h>test data</h>
-                  </div>
+                <table id="" class="w-full text-sm text-left text-gray-500 ">
+                  <thead class="text-xs text-white uppercase bg-slate-900 ">
+                      <tr>
+                          <th scope="col" class="px-6 py-3">
+                              #
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Date
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Action By
+                          </th>
+                          <th scope="col" class="px-6 py-3">
+                              Comment
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="odd:bg-white even:bg-slate-100 h-8">
+                      <td>1</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
 
-                  <div class="flex flex-col">
-                    <label class="font-bold">Bill Expiry Date: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Bill Genration Date: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Control Number: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Control Number Date: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Status Code: </label>
-                    <h>test data</h>
-                  </div>
+                    </tr>
+                  </tbody>
+                  </table>
 
 
-
-                </div>
-              </div>
-
-              <div>
-                <div
-                  class="w-full bg-slate-800 text-white flex items-center font-bold px-2 h-12"
-                >
-                  <h>PAYMENT DETAILS</h>
-                </div>
-                <div class="grid grid-cols-3 px-2 py-4 gap-4">
-                  <div class="flex flex-col">
-                    <label class="font-bold">Transaction Date: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Paid Amount: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Payment Channel: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Payment Receipt: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Service Provider: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Credited Account: </label>
-                    <h>test data</h>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div
-                  class="w-full bg-slate-800 text-white flex items-center font-bold px-2 h-12"
-                >
-                  <h>PAYER DETAILS</h>
-                </div>
-                <div class="grid grid-cols-3  gap-4 px-2 py-4">
-                  <div class="flex flex-col">
-                    <label class="font-bold">Name: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Mobile No.: </label>
-                    <h>test data</h>
-                  </div>
-
-                  <div class="flex flex-col">
-                    <label class="font-bold">Transaction ID: </label>
-                    <h>test data</h>
-                  </div>
-
-                </div>
-              </div>
-         
-
+            </div>
             </div>
           </div>
 
@@ -1284,87 +1121,14 @@
       src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.11.5/b-2.2.2/sl-1.3.4/datatables.min.js"
     ></script>
 
-    <!-- <script
-      type="text/javascript"
-      src="../management/Editor-2.0.7/js/dataTables.editor.js"
-    ></script> -->
-
     <script
       src="../../../../js/buttonControls.js"
       type="text/javascript"
       charset="utf8"
     ></script>
 
-
-
-<!-- update visa Modal -->
+    <!-- Update criteria Modal -->
     <div
-      id="updateVisaModal"
-      tabindex="-1"
-      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]"
-    >
-      <div class="relative p-4 w-full max-w-xl h-full md:h-auto drop-shadow-xl">
-        <div class="relative bg-white rounded-lg shadow">
-          <form action="" id="deleteForm" method="post">
-            <button
-              type="button"
-              class="absolute top-3 right-2.5 bg-transparent hover:bg-red-300 hover:text-red-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-toggle="updateVisaModal"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            <div class="p-6 py-8 space-y-4">
-              <h class="font-bold text-xl">UPDATE VISA TYPE</h>
-              <div class="space-y-6">
-                <div class="flex flex-col">
-                  <label>Visa Type</label>
-                  <input
-                    class="h-9 px-2 w-full border-blue-800 border-2 rounded-sm"
-                    placeholder="New Password"
-                    type="text"
-                  />
-                </div>
-
-                <div class="flex flex-col">
-                  <label>Visa Purpose</label>
-                  <select class="h-9 px-2 bg-white border-2 border-slate-500">
-                        <option value="yes" class="px-2">Select Visa Purpose</option>
-                      </select>
-                </div>
-              </div>
-              <div class="flex items-center justify-end w-full">
-                <button
-                  data-modal-toggle="updateVisaModal"
-                  class="text-green-900 hover:text-white bg-green-200 hover:bg-green-900 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
-                >
-                  Save Details
-                </button>
-                <button
-                  data-modal-toggle="updateVisaModal"
-                  class="bg-red-700 text-white rounded-md text-sm font-medium px-5 py-2.5"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-<!-- Update criteria Modal -->
-<div
       id="updateCriteriaModal"
       tabindex="-1"
       class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]"
@@ -1396,15 +1160,13 @@
                 <div class="flex flex-col">
                   <label>Criteria</label>
                   <select class="h-9 px-2 bg-white border-2 border-slate-500">
-                        <option value="yes" class="px-2">Select Criteria</option>
-                                 
-                      </select>
+                    <option value="yes" class="px-2">Select Criteria</option>
+                  </select>
                 </div>
 
                 <div class="flex flex-col">
                   <label>Remark</label>
-                  <textarea class="w-full border-2 border-slate-600 p-2 ">
-
+                  <textarea class="w-full border-2 border-slate-600 p-2">
                   </textarea>
                 </div>
               </div>
@@ -1428,62 +1190,6 @@
       </div>
     </div>
 
-<!-- Stay Duration Modal -->
-    <div
-      id="stayModal"
-      tabindex="-1"
-      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full bg-[#80808055]"
-    >
-      <div class="relative p-4 w-full max-w-xl h-full md:h-auto drop-shadow-xl">
-        <div class="relative bg-white rounded-lg shadow">
-          <form action="" id="deleteForm" method="post">
-            <button
-              type="button"
-              class="absolute top-3 right-2.5 bg-transparent hover:bg-red-300 hover:text-red-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-toggle="stayModal"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
-            <div class="p-6 py-8 space-y-4">
-              <h class="font-bold text-xl">STAY DURATION</h>
-              <div class="space-y-6">
-                <div class="flex flex-col">
-                  <label>Stay Duration</label>
-                  <input type="text" class="w-full h-12 px-2 border-2 border-slate-500"/>
-                </div>
-
-                
-              </div>
-              <div class="flex items-center justify-end w-full">
-                <button
-                  data-modal-toggle="stayModal"
-                  class="text-green-900 hover:text-white bg-green-200 hover:bg-green-900 font-medium rounded-md text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
-                >
-                  Update Stay Duration
-                </button>
-                <button
-                  data-modal-toggle="stayModal"
-                  class="bg-red-700 text-white rounded-md text-sm font-medium px-5 py-2.5"
-                >
-                  Cancel
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
     <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
   </body>
 </html>
